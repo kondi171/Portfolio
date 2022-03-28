@@ -1,0 +1,19 @@
+.nav {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    font-size: 36px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    font-weight: bold;
+    font-family: $decorativeFont;
+    &__option {
+        color: $supportColor;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

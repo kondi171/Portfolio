@@ -1,0 +1,47 @@
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: $darkColor;
+    background-image: url('./../img/mosaic.png');
+    // background-position: 8vw -5vw;
+    // background-blend-mode: darken;
+    .cloud {
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        top: 30%;
+        width: 60%;
+        text-align: center;
+        .author {
+            font-family: $decorativeFont;
+            font-size: 64px;
+            color: $mainColor;
+        }
+        .title {
+            font-family: $additionalFont;
+            font-size: 34px;
+            color: $bgColor;
+        }
+    }
+    .settings {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        font-size: 48px;
+        color: $supportColor;
+        // animation: 6s spin infinite linear;
+        // transition-duration: .4s;
+        // &:hover {
+        //     cursor: pointer;
+        //     animation-name: none;
+        //     color: lighten($supportColor, 20%);
+        // }
+    }    
+}
+
+// @keyframes spin { 
+//     100% { 
+//         transform:rotate(360deg); 
+//     } 
+// }
