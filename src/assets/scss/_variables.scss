@@ -1,16 +1,22 @@
-// Fonts
 @import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Rock+Salt&family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Lobster+Two:wght@400;700&family=Ropa+Sans&display=swap');
 
-$mainFont: 'Viga', sans-serif;
-$additionalFont: 'Palette Mosaic', cursive;
-$decorativeFont: 'Rock Salt', cursive;
+$primaryFont: 'Ropa Sans', sans-serif;
+$nonLatinFont: 'Lobster Two', cursive;
+$supportFont: 'Fuzzy Bubbles', cursive;
+$titleFont: 'Rock Salt', cursive;
 
-// Colors
 
-$mainColor: #BF5B04;
-$bgColor: #e4e4e4;
-$secondaryColor: #403429;
-$supportColor: #d1d1d1;
-$overlayColor: #73635D;
-$darkColor: #232323;
+// $primaryColor: #BF5B04;
+// $secondaryColor: #403429;
+// $supportColor: #d1d1d1;
+// $overlayColor: #73635D;
+// $bgColor: #e4e4e4;
+// $darkColor: #232323;
 
+
+$primaryColor: #F2A71B;
+$secondaryColor: #025E73;
+$supportColor: #BFB78F;
+$bgColor: #EDFFFF;
+$darkColor: #011F26;

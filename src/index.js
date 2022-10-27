@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LandingPage from './components/landing-page/LandingPage';
-
+import Portfolio from './components/Portfolio';
+import './assets/scss/main.scss';
 ReactDOM.render(
     <React.StrictMode>
-        <LandingPage />
+        <Portfolio />
     </React.StrictMode>,
     document.getElementById('root')
 );

@@ -1,0 +1,42 @@
+.modal {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 40vw;
+  height: 80vh;
+  background-color: blue;
+  z-index: 12;
+  width: 400px;
+  border-radius: 4px;
+  box-shadow: 8px 8px 24px 0px $darkColor;
+  height: 55vh;
+
+  &__description {
+    font-size: 3vw;
+  }
+
+  .image {
+    width: 5vw;
+    height: 5vw;
+    margin: 0 auto;
+    margin-top: -2vw;
+  }
+
+  &__title {
+    font-size: 2vw;
+    margin: 1vw auto;
+  }
+
+  &__description {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0 2vw;
+    padding: 0 2vw;
+  }
+
+  &__expand {
+    display: block;
+  }
+}

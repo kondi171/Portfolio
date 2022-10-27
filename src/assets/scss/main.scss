@@ -1,14 +1,18 @@
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '_placeholders.scss';
-@import '_header.scss';
-@import '_nav.scss';
-@import '_about.scss';
-@import '_contact.scss';
-@import '_projects.scss';
-@import '_skills.scss';
-@import '_contact.scss';
-@import '_footer.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'placeholders.scss';
+@import 'header.scss';
+@import 'nav.scss';
+@import 'about.scss';
+@import 'skillset.scss';
+@import 'projects.scss';
+@import 'footer.scss';
+@import 'modal.scss';
+
+:root {
+    font-size: 10px;
+    font-family: $primaryFont;
+}
 
 * {
     margin: 0;
@@ -17,6 +21,6 @@
 }
 
 .wrapper {
-    background-color: $bgColor;
-    background-image: url('./../img/fabric_1.png');
+    // background-color: $bgColor;
+    background-image: url('./../img/background/fabric_1.png');
 }

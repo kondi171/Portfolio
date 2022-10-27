@@ -1,19 +1,187 @@
 .nav {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    right: 10%;
-    font-size: 36px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 10vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    width: 80%;
-    font-weight: bold;
-    font-family: $decorativeFont;
-    &__option {
+    box-shadow: inset 0px 7vh 5vh -5vh $darkColor;
+    border-top: .2vh solid $darkColor;
+    z-index: 20;
+    background-color: $darkColor;
+    border-bottom: 1px solid $primaryColor;
+    opacity: .8;
+    box-shadow: 0 0 6px 1px $primaryColor;
+
+    .fa-cog,
+    .fa-bars {
+        margin: 4vw;
         color: $supportColor;
-        &:hover {
+        font-size: 6vh;
+        z-index: 2;
+        color: $primaryColor;
+    }
+
+    .menu {
+        width: 70%;
+        font-size: 4vw;
+        display: none;
+        margin-left: 30%;
+        padding: 1vw;
+
+        .option {
+            color: $primaryColor;
+            transition-duration: .4s;
+
+            &:hover {
+                cursor: pointer;
+                color: $supportColor;
+            }
+        }
+    }
+
+    .settings {
+        position: fixed;
+        // display: flex;
+        display: none;
+        align-items: center;
+        flex-direction: column;
+        top: 2vw;
+        left: 2vw;
+        width: 80%;
+        height: 20%;
+        background-color: darken($darkColor, 3%);
+        border-radius: 4px;
+        opacity: .8;
+
+        h4 {
+            color: $primaryColor;
+            text-align: center;
+            font-size: 5vw;
+        }
+
+        .toggle-button-cover {
+            display: block;
+            position: relative;
+            width: 200px;
+            height: 100%;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        .button-cover,
+        .knobs,
+        .layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .button {
+            position: relative;
+            top: 50%;
+            width: 74px;
+            height: 36px;
+            margin: -20px auto 0 auto;
+            overflow: hidden;
+        }
+
+        .button.r,
+        .button.r .layer {
+            border-radius: 100px;
+        }
+
+        .button.b2 {
+            border-radius: 2px;
+        }
+
+        .checkbox {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
             cursor: pointer;
+            z-index: 3;
+        }
+
+        .knobs {
+            z-index: 2;
+        }
+
+        .layer {
+            width: 100%;
+            background-color: #ebf7fc;
+            transition: 0.3s ease all;
+            z-index: 1;
+        }
+
+        .knobs:before {
+            content: "YES";
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 20px;
+            height: 10px;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 9px 4px;
+            background-color: #03a9f4;
+            border-radius: 50%;
+            transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+        }
+
+        .checkbox:checked+.knobs:before {
+            content: "NO";
+            left: 42px;
+            background-color: #f44336;
+        }
+
+        .checkbox:checked~.layer {
+            background-color: #fcebeb;
+        }
+
+        .knobs,
+        .knobs:before,
+        .layer {
+            transition: 0.3s ease all;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .nav {
+        .fa-bars {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .nav {
+        .fa-cog {
+            display: block;
+            position: static;
+
+        }
+
+        .menu {
+            font-size: 2vw;
         }
     }
 }

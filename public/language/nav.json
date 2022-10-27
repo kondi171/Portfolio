@@ -1,0 +1,12 @@
+{
+  "pl": {
+    "about": "O mnie",
+    "skills": "Umiejętności",
+    "projects": "Projekty"
+  },
+  "eng": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects"
+  }
+}
