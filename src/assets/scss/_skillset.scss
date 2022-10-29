@@ -1,11 +1,14 @@
 .skill-set {
     min-height: 100vh;
     margin: 0 auto;
+    background-image: url('./../img/background/fabric_1.png');
+    background-blend-mode: hard-light;
+    // background-color: $bColor;
+    // border-top: 2px solid $blackColor;
+    box-shadow: 0 0 4px 2px $blackColor;
 
-    // background-blend-mode: overlay;
-    // background-color: #ddd;
     .skills-wrapper {
-        background-color: $supportColor;
+        // background-color: $supportColor;
         display: flex;
         flex-wrap: wrap;
     }
@@ -26,6 +29,7 @@
         margin: 5vw 0;
         background-color: $supportColor;
         padding-bottom: 8vw;
+        // transform: rotateY(90deg);
 
         .image {
             display: flex;
@@ -167,7 +171,7 @@
         transition-duration: .4s;
 
         .skills-wrapper {
-            background-color: #fff;
+            // background-color: #fff;
             justify-content: space-evenly;
             // align-items: flex-start;
             display: flex;

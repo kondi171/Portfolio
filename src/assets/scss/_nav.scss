@@ -8,16 +8,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: inset 0px 7vh 5vh -5vh $darkColor;
+    box-shadow: inset 0px 7vh 5vh -8vh $primaryColor;
     border-top: .2vh solid $darkColor;
     z-index: 20;
-    background-color: $darkColor;
-    border-bottom: 1px solid $primaryColor;
-    opacity: .8;
-    box-shadow: 0 0 6px 1px $primaryColor;
+    transition-duration: .4s;
+
+    .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        // color: $primaryColor;
+        background-color: $primaryColor;
+    }
+
+    progress::-moz-progress-bar {
+        background: $primaryColor;
+    }
+
+    progress::-webkit-progress-value {
+        background: $primaryColor;
+    }
 
     .fa-cog,
     .fa-bars {
+        position: relative;
         margin: 4vw;
         color: $supportColor;
         font-size: 6vh;
@@ -38,122 +54,85 @@
 
             &:hover {
                 cursor: pointer;
-                color: $supportColor;
+                color: $blackColor;
+                text-shadow: 1px 1px 0 $primaryColor,
+                    -1px 1px 0 $primaryColor,
+                    // 1px -1px 0 $primaryColor,
+                    -1px -1px 0 $primaryColor;
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    .caricature {
+        width: 50px;
+        height: 50px;
+        z-index: -2;
+        transition-duration: .4s;
+        transform: scale(0);
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+
+    .settings-wrapper {
+        position: relative;
+
+        .fa-cog {
+            transition-duration: .4s;
+
+            &:hover {
+                cursor: pointer;
+                color: $secondaryColor;
+                transform: scale(1.5);
             }
         }
     }
 
     .settings {
-        position: fixed;
-        // display: flex;
-        display: none;
+        position: absolute;
+        transform: scale(0);
         align-items: center;
         flex-direction: column;
-        top: 2vw;
-        left: 2vw;
-        width: 80%;
-        height: 20%;
+        top: 50%;
+        left: 50%;
+        width: 150%;
         background-color: darken($darkColor, 3%);
         border-radius: 4px;
         opacity: .8;
+        transition-duration: .4s;
+        z-index: -1;
+
+        &__btn {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 2vh;
+
+            span {
+                font-size: 3vh;
+                color: $primaryColor;
+            }
+
+            .fa {
+                font-size: 4vh;
+                color: $primaryColor;
+            }
+        }
+
+
 
         h4 {
+            margin: 2vh;
             color: $primaryColor;
             text-align: center;
-            font-size: 5vw;
+            font-size: 3vh;
         }
 
-        .toggle-button-cover {
-            display: block;
-            position: relative;
-            width: 200px;
-            height: 100%;
-            margin: 20px;
-            box-sizing: border-box;
-        }
-
-        .button-cover,
-        .knobs,
-        .layer {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-
-        .button {
-            position: relative;
-            top: 50%;
-            width: 74px;
-            height: 36px;
-            margin: -20px auto 0 auto;
-            overflow: hidden;
-        }
-
-        .button.r,
-        .button.r .layer {
-            border-radius: 100px;
-        }
-
-        .button.b2 {
-            border-radius: 2px;
-        }
-
-        .checkbox {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            opacity: 0;
-            cursor: pointer;
-            z-index: 3;
-        }
-
-        .knobs {
-            z-index: 2;
-        }
-
-        .layer {
-            width: 100%;
-            background-color: #ebf7fc;
-            transition: 0.3s ease all;
-            z-index: 1;
-        }
-
-        .knobs:before {
-            content: "YES";
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            width: 20px;
-            height: 10px;
-            color: #fff;
-            font-size: 10px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1;
-            padding: 9px 4px;
-            background-color: #03a9f4;
-            border-radius: 50%;
-            transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-        }
-
-        .checkbox:checked+.knobs:before {
-            content: "NO";
-            left: 42px;
-            background-color: #f44336;
-        }
-
-        .checkbox:checked~.layer {
-            background-color: #fcebeb;
-        }
-
-        .knobs,
-        .knobs:before,
-        .layer {
-            transition: 0.3s ease all;
+        &.visible {
+            transform: scale(1);
         }
     }
 }
@@ -184,4 +163,21 @@
             font-size: 2vw;
         }
     }
+}
+
+.rolled {
+    background-color: $blackColor;
+    border-bottom: 1px solid $primaryColor;
+    opacity: .8;
+    box-shadow: 0 0 6px 1px $primaryColor,
+        // inset 0 0 100px 100px #191919cc;
+        inset 0px 7vh 5vh -8vh $primaryColor;
+
+    .nav__caricature {
+        margin: 0 2vw;
+    }
+}
+
+.display {
+    transform: scale(1) !important;
 }

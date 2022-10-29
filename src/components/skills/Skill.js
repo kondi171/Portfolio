@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-
+import { useSpring, animated } from "react-spring";
 const Skill = ({ id, img, title, description, sizing, expand, setExpand }) => {
 
     const [width, setWidth] = useState(0);
     const [modalOpen, setModalOpen] = useState(false);
+    const [animate, setAnimate] = useState(false);
 
+    const rotateSkillCard = useSpring({
+        rotateY: animate ? -90 : 0,
+    });
     const expandText = () => {
         if (width >= 1024) return false;
         else return true;
@@ -36,11 +40,17 @@ const Skill = ({ id, img, title, description, sizing, expand, setExpand }) => {
         document.body.style.overflowY = 'visible';
     }
 
-    useEffect(() => {
-        setWidth(window.innerWidth);
-    }, []);
+    // useEffect(() => {
+    //     setWidth(window.innerWidth);
+    //     const aboutHeight = document.getElementById('about').offsetHeight;
+    //     const skillSetHeight = document.getElementById('skillSet').offsetHeight;
+
+    //     window.addEventListener('scroll', () => {
+    //         if (window.scrollY > aboutHeight - 450) setAnimate(true);
+    //     });
+    // }, []);
     return (
-        <div id={id} className="stack-item">
+        <animated.div id={id} className="stack-item">
             <div className="image">
                 <img className={`stack-item__image stack-item__image--${sizing}`} src={img} alt={`${title} logo`} />
             </div>
@@ -53,7 +63,7 @@ const Skill = ({ id, img, title, description, sizing, expand, setExpand }) => {
                 <button onClick={handleCollapse} className="stack-item__expand"><span className="visible">Zakończ czytanie...</span><span className="invisible">Kliknij!</span></button>
                 : <button onClick={handleExpand} className="stack-item__expand"><span className="visible">Czytaj dalej...</span><span className="invisible">Kliknij!</span></button>
             }
-        </div>
+        </animated.div>
     );
 }
 export default Skill;

@@ -13,7 +13,8 @@ import MySQL from "../../assets/img/stack/MySQL.png";
 import PHP from "../../assets/img/stack/PHP.png";
 import CPP from "../../assets/img/stack/CPP.png";
 import Java from "../../assets/img/stack/Java.png";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSpring, animated } from "react-spring";
 import ExpandedSkill from './ExpandedSkill';
 
 const SkillSet = () => {
@@ -118,6 +119,7 @@ const SkillSet = () => {
     },
   ];
   const [expand, setExpand] = useState('');
+
   return (
     <section id="skillSet" className="skill-set">
       <h2>Skills</h2>
