@@ -1,69 +1,41 @@
-import { useEffect, useState } from "react";
-import { useSpring, animated } from "react-spring";
-const Skill = ({ id, img, title, description, sizing, expand, setExpand }) => {
+import { useState, useEffect, useContext } from "react";
+import { AppContext } from "../../AppContext";
 
-    const [width, setWidth] = useState(0);
-    const [modalOpen, setModalOpen] = useState(false);
-    const [animate, setAnimate] = useState(false);
+const Skill = ({ id, img, title, description, sizing, setExpandedSkillId }) => {
 
-    const rotateSkillCard = useSpring({
-        rotateY: animate ? -90 : 0,
-    });
+    const { skillsData } = useContext(AppContext);
+
+    const [expandedSkillContent, setExpandedSkillContent] = useState(false);
+
     const expandText = () => {
-        if (width >= 1024) return false;
-        else return true;
+        if (window.innerWidth >= 1024) setExpandedSkillContent(false);
+        else return setExpandedSkillContent(true);
     }
 
     window.addEventListener('resize', () => {
-        setWidth(window.innerWidth);
+        expandText();
     });
 
-    const handleExpand = () => {
-        setModalOpen(true);
-        setExpand(expand);
-        const skillCard = document.getElementById(id);
-        skillCard.classList.add('layer');
-        const skillSet = document.querySelectorAll('.stack-item');
-        skillSet.forEach(skill => skill.classList.remove('stack-item--expand'));
-
-        const selectedSkill = skillCard.firstChild.nextSibling.textContent;
-        if (selectedSkill === title) {
-            document.body.style.overflowY = 'hidden';
-            skillCard.classList.add('stack-item--expanded');
-        }
+    const handleExpand = e => {
+        const id = e.target.dataset.id;
+        setExpandedSkillId(id.slice(5, id.length));
     }
 
-    const handleCollapse = () => {
-        setModalOpen(false);
-        const skillSet = document.querySelectorAll('.stack-item');
-        skillSet.forEach(skill => skill.classList.remove('stack-item--expanded'));
-        document.body.style.overflowY = 'visible';
-    }
-
-    // useEffect(() => {
-    //     setWidth(window.innerWidth);
-    //     const aboutHeight = document.getElementById('about').offsetHeight;
-    //     const skillSetHeight = document.getElementById('skillSet').offsetHeight;
-
-    //     window.addEventListener('scroll', () => {
-    //         if (window.scrollY > aboutHeight - 450) setAnimate(true);
-    //     });
-    // }, []);
+    useEffect(() => {
+        expandText();
+    }, []);
     return (
-        <animated.div id={id} className="stack-item">
+        <div id={`skill${id}`} className="stack-item">
             <div className="image">
                 <img className={`stack-item__image stack-item__image--${sizing}`} src={img} alt={`${title} logo`} />
             </div>
             <span className="stack-item__title">{title}</span>
-            <p className="stack-item__description">
-                {width <= 1024 ?
-                    description : <>{modalOpen ? description : description.slice(0, 300) + '...'}</>
-                }</p>
-            {modalOpen ?
-                <button onClick={handleCollapse} className="stack-item__expand"><span className="visible">Zakończ czytanie...</span><span className="invisible">Kliknij!</span></button>
-                : <button onClick={handleExpand} className="stack-item__expand"><span className="visible">Czytaj dalej...</span><span className="invisible">Kliknij!</span></button>
+            {expandedSkillContent ?
+                <p className="stack-item__description" dangerouslySetInnerHTML={{ __html: description }}></p> :
+                <p className="stack-item__description" dangerouslySetInnerHTML={{ __html: description.slice(0, 300) + '...' }}></p>
             }
-        </animated.div>
+            <button data-id={`skill${id}`} onClick={e => handleExpand(e)} className="stack-item__expand"><span data-id={`skill${id}`} className="visible">{skillsData.buttonRead}...</span><span data-id={`skill${id}`} className="invisible">{skillsData.buttonClick}!</span></button>
+        </div>
     );
 }
 export default Skill;

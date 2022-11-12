@@ -21,8 +21,28 @@
 }
 
 .wrapper {
-    // background-color: $bgColor;
-    background-attachment: fixed;
-    background-image: url('./../img/background/45degreee_fabric.webp');
+    background-color: $bgColor;
+}
 
+::selection {
+    background-color: $primaryColor;
+    color: $darkColor;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: $darkColor;
+
+    &-thumb {
+        background: $primaryColor;
+        transition-duration: .4s;
+        border-radius: 100vw;
+        border: 3px solid $darkColor;
+        transition-duration: .4s;
+
+        &:hover {
+            cursor: pointer;
+            background: $secondaryColor;
+        }
+    }
 }

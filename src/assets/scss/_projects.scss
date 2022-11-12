@@ -1,4 +1,11 @@
 .projects {
   height: 100vh;
   background-color: #555;
+  background-image: url('./../img/background/projects.png');
+  background-attachment: fixed;
+
+  h2 {
+    @extend %title;
+    color: $bgColor;
+  }
 }

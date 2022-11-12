@@ -1,21 +1,26 @@
 .about {
+    background-attachment: fixed;
+    background-image: url('./../img/background/about.webp');
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
+    padding: 0 10%;
+    padding-bottom: 5%;
     margin: 0 auto;
-    margin-top: 4vh;
+    // box-shadow: inset 0 0 2px 2px $blackColor;
 
     .intro {
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
+        padding: 5% 0;
 
         &__title {
             font-family: $titleFont;
-            font-size: 8vw;
+            font-size: 350%;
             text-align: center;
             transform: rotate(-10deg);
         }
@@ -27,7 +32,7 @@
             align-items: center;
 
             .author__title {
-                font-size: 6vw;
+                font-size: 200%;
                 font-family: $titleFont;
                 text-align: center;
                 order: 2;
@@ -39,7 +44,6 @@
                 width: 60%;
                 order: 1;
             }
-
         }
     }
 
@@ -48,7 +52,6 @@
             font-size: 5vw;
             text-align: justify;
             line-height: 140%;
-            margin-bottom: 5vh;
 
             h3 {
                 margin-bottom: 10px;
@@ -56,7 +59,7 @@
                 color: $secondaryColor;
             }
 
-            div {
+            article {
                 display: block;
                 margin-bottom: 4vw;
             }
@@ -85,18 +88,18 @@
                 font-size: 3vw;
                 text-align: justify;
                 line-height: 140%;
-                margin-bottom: 5vh;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: flex-start;
                 flex-direction: column;
 
-                div {
+                article {
                     width: 70%;
                     margin: 4vh;
+                    transition-duration: .4s;
                 }
 
-                div:nth-of-type(even) {
+                article:nth-of-type(even) {
                     align-self: flex-end;
                 }
             }
@@ -117,24 +120,35 @@
                 font-size: 4vw;
             }
         }
+
     }
 }
 
-@media (min-width: 600px) and (orientation: landscape) {}
-
-@media (min-width: 800px) and (orientation: landscape) {}
-
-@media screen and (min-width: 1024px) {
+@media (min-width: 600px) and (orientation: landscape) {
     .about {
         .intro {
-            margin-top: 10rem;
+            .about__author {
+                .author__svg {
+                    width: 30%;
+                }
+
+                .author__title {
+                    font-size: 2vw;
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+    .about {
+        .intro {
             flex-direction: row;
 
             &__title {
-                font-family: $titleFont;
                 font-size: 8vh;
-                text-align: center;
-                transform: rotate(-10deg);
+                align-self: center;
             }
 
             .about__author {
@@ -150,8 +164,31 @@
                 }
             }
         }
+    }
+}
 
+@media screen and (min-width: 1024px) {
+    .about {
+        .intro {
+            flex-direction: row;
 
+            &__title {
+                font-size: 8vh;
+            }
+
+            .about__author {
+                display: flex;
+
+                .author__svg {
+                    width: 50%;
+                    margin-bottom: 0;
+                }
+
+                .author__title {
+                    font-size: 2rem;
+                }
+            }
+        }
 
         &__content {
             .content__info {

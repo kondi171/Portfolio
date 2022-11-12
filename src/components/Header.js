@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useSpring, animated } from "react-spring";
 
-import Nav from './Nav';
-import Konrad from './../assets/img/avatar/Konrad.jpeg';
+import Nav from './navigation/Nav';
 const Header = () => {
 
     const titles = [
@@ -20,34 +19,49 @@ const Header = () => {
         scale: 1,
         delay: 1000,
         config: { duration: 400 }
-    })
-    useEffect(() => {
-        // setInterval(() => {
-        //     if (titleIndex > titles.length) {
-        //         console.log('state zero');
-        //         setTitleIndex(0);
-        //     }
-        //     else {
-        //         setTitleIndex(titleIndex + 1);
-        //         console.log('increment' + titleIndex);
-        //     }
-        // }, 3000);
-    }, []);
+    });
+
+    const useInterval = (callback, delay) => {
+        const savedCallback = useRef();
+        useEffect(() => {
+            savedCallback.current = callback;
+        }, [callback]);
+
+        useEffect(() => {
+            let id = setInterval(() => {
+                savedCallback.current();
+            }, delay);
+            return () => clearInterval(id);
+        }, [delay]);
+    }
+    const animateTitleChange = index => {
+        const randomAnimationIndex = Math.floor(Math.random() * 3) + 1;
+        const titleSpan = document.querySelector('.header__title span:nth-of-type(2)');
+        titleSpan.classList.add(`animate-${randomAnimationIndex}`);
+        setTimeout(() => {
+            setTitleIndex(index);
+        }, 500);
+        setTimeout(() => {
+            titleSpan.classList.remove(`animate-${randomAnimationIndex}`);
+        }, 600);
+    }
+    useInterval(() => {
+        if (titleIndex >= titles.length - 1) animateTitleChange(0);
+        else animateTitleChange(titleIndex + 1);
+    }, 3000);
+
     useEffect(() => {
         const spnCursor = document.querySelector('.cursor');
         setTimeout(() => {
             const spnText = document.querySelector('.text');
-
             const txt = 'Konrad Nowak';
             let letterAdding = 0;
             const letterInterval = setInterval(() => {
-                // console.log(txt.length);
                 if (letterAdding >= txt.length) clearInterval(letterInterval);
                 else {
                     spnText.textContent += txt[letterAdding];
                     letterAdding++;
                 }
-
             }, 200);
         }, 1000);
         setInterval(() => {

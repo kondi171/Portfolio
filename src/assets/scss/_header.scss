@@ -2,13 +2,16 @@
     position: relative;
     height: 100vh;
     background-color: $blackColor;
-    background-image: url('./../img/background/background.jpg');
+    background-image: url('./../img/background/header.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: luminosity;
     background-position: 40% 70%;
     font-family: $nonLatinFont;
     overflow-x: hidden;
+    font-size: 200%;
+    // border-bottom: 1px solid $primaryColor;
+    box-shadow: 2px 0 20px 2px black;
 
     &__title {
         position: absolute;
@@ -17,7 +20,7 @@
         right: 5vw;
         width: 90vw;
         margin: auto;
-        font-size: 9vw;
+        font-size: 250%;
         letter-spacing: .4rem;
         color: $primaryColor;
 
@@ -25,13 +28,29 @@
             display: block;
             text-align: center;
             margin-bottom: 1vh;
+            transition-duration: .4s;
+
+            &.animate-1 {
+                opacity: 0;
+                transform: translateY(-150px);
+            }
+
+            &.animate-2 {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            &.animate-3 {
+                transform: scaleX(0) rotateX(1000deg);
+                opacity: 0;
+            }
         }
     }
 
 
     &__author {
         position: absolute;
-        bottom: 20vw;
+        bottom: 2%;
         left: 10vw;
         right: 10vw;
         width: 80vw;
@@ -39,7 +58,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 6vw;
+        font-size: 150%;
         font-weight: bold;
         color: $primaryColor;
         letter-spacing: 1px;
@@ -77,31 +96,30 @@
     }
 }
 
-@media (min-width: 600px) and (orientation: landscape) {
+@media (min-width: 600px) {
     .header {
         &__title {
-            font-size: 10vh;
+            font-size: 180%;
             letter-spacing: .5vh;
         }
 
         &__author {
             bottom: 10vh;
-            font-size: 4vh;
         }
     }
 }
 
-@media (min-width: 800px) and (orientation: landscape) {
+@media (min-width: 800px) {
     .header {
         background-size: cover;
 
         &__title {
-            font-size: 5vh;
+            font-size: 250%;
             letter-spacing: .5vh;
         }
 
         &__author {
-            font-size: 3vh;
+            font-size: 150%;
             bottom: 3vh;
         }
     }
@@ -110,9 +128,10 @@
 @media screen and (min-width: 1024px) {
     .header {
         &__title {
+            text-align: center;
             margin-top: -5vh;
             font-family: $titleFont;
-            font-size: 8rem;
+            font-size: 250%;
             letter-spacing: 2rem;
             text-shadow: 1rem 1rem 1rem $blackColor,
                 -1rem -1rem 1rem $blackColor,

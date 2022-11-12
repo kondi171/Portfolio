@@ -1,12 +1,30 @@
 {
   "pl": {
-    "about": "O mnie",
-    "skills": "Umiejętności",
-    "projects": "Projekty"
+    "menu": {
+      "about": "O mnie",
+      "skills": "Umiejętności",
+      "projects": "Projekty",
+      "contact": "Kontakt"
+    },
+    "settings": {
+      "changeLanguage": "Zmień Język",
+      "changeTheme": "Zmień Motyw",
+      "light": "Jasny",
+      "dark": "Ciemny"
+    }
   },
   "eng": {
-    "about": "About",
-    "skills": "Skills",
-    "projects": "Projects"
+    "menu": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "settings": {
+      "changeLanguage": "Change Language",
+      "changeTheme": "Change Theme",
+      "light": "Light",
+      "dark": "Dark"
+    }
   }
 }

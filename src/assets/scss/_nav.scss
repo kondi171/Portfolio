@@ -4,60 +4,96 @@
     left: 0;
     right: 0;
     width: 100vw;
-    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: inset 0px 7vh 5vh -8vh $primaryColor;
-    border-top: .2vh solid $darkColor;
-    z-index: 20;
+    z-index: 10;
     transition-duration: .4s;
+    font-size: 150%;
+    padding: 2%;
+    font-family: $supportFont;
+    max-height: 20%;
 
     .progress-bar {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        bottom: 0;
         left: 0;
         width: 100%;
         height: 3px;
-        // color: $primaryColor;
         background-color: $primaryColor;
+        transform: scale(0);
+        z-index: 10;
+
+        &::-moz-progress-bar {
+            background-color: $primaryColor;
+            border-radius: 20px;
+        }
+
+        &::-webkit-progress-value {
+            background-color: $primaryColor;
+            border-radius: 20px;
+        }
     }
 
-    progress::-moz-progress-bar {
-        background: $primaryColor;
-    }
 
-    progress::-webkit-progress-value {
-        background: $primaryColor;
-    }
 
     .fa-cog,
+    .fa-times,
     .fa-bars {
         position: relative;
         margin: 4vw;
         color: $supportColor;
-        font-size: 6vh;
         z-index: 2;
+        font-size: 150%;
         color: $primaryColor;
     }
 
     .menu {
-        width: 70%;
-        font-size: 4vw;
-        display: none;
-        margin-left: 30%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        font-size: 200%;
+        font-family: $primaryFont;
+        transform: scale(0);
         padding: 1vw;
+        transition-duration: .4s;
+        background-color: #000;
+        opacity: .8;
+
+        h2 {
+            color: $primaryColor;
+            font-size: 100%;
+        }
 
         .option {
             color: $primaryColor;
             transition-duration: .4s;
+            width: 80%;
+            text-align: center;
+            font-size: 40%;
+            margin: 10% 0;
+            border-bottom: 2px solid $primaryColor;
+
+            &.active {
+                color: $blackColor;
+                text-shadow: 1px 1px 0 $primaryColor,
+                    -1px 1px 0 $primaryColor,
+                    -1px -1px 0 $primaryColor;
+                transform: scale(1.5);
+            }
 
             &:hover {
                 cursor: pointer;
                 color: $blackColor;
                 text-shadow: 1px 1px 0 $primaryColor,
                     -1px 1px 0 $primaryColor,
-                    // 1px -1px 0 $primaryColor,
                     -1px -1px 0 $primaryColor;
                 transform: scale(1.5);
             }
@@ -67,9 +103,8 @@
     .caricature {
         width: 50px;
         height: 50px;
-        z-index: -2;
         transition-duration: .4s;
-        transform: scale(0);
+        z-index: 10;
 
         &:hover {
             cursor: pointer;
@@ -79,6 +114,7 @@
 
     .settings-wrapper {
         position: relative;
+        z-index: 20;
 
         .fa-cog {
             transition-duration: .4s;
@@ -98,18 +134,19 @@
         flex-direction: column;
         top: 50%;
         left: 50%;
-        width: 150%;
         background-color: darken($darkColor, 3%);
         border-radius: 4px;
-        opacity: .8;
+        opacity: .9;
         transition-duration: .4s;
-        z-index: -1;
+        padding: 25%;
+        width: 400%;
 
         &__btn {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
             margin: 2vh;
+            z-index: 100000;
 
             span {
                 font-size: 3vh;
@@ -119,10 +156,13 @@
             .fa {
                 font-size: 4vh;
                 color: $primaryColor;
+                margin: 5%;
+            }
+
+            &:hover {
+                cursor: pointer;
             }
         }
-
-
 
         h4 {
             margin: 2vh;
@@ -137,41 +177,89 @@
     }
 }
 
+@media (orientation: landscape) {
+    .nav {
+        .caricature {
+            padding: 5px;
+        }
+
+        .settings {
+            width: 200%;
+        }
+    }
+}
+
 @media (min-width: 800px) {
     .nav {
         .fa-bars {
             display: none;
         }
 
+        .settings {
+            width: 320%;
+        }
+
         .menu {
+            position: static;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
+            margin-left: -10%;
+
+            .option {
+                font-size: 55%;
+            }
         }
     }
 }
 
 @media (min-width: 1200px) {
     .nav {
+        height: 10%;
+
+        .caricature {
+            padding: 0;
+        }
+
+        .settings {
+            width: 200%;
+        }
+
         .fa-cog {
             display: block;
             position: static;
-
+            font-size: 3vw;
         }
 
         .menu {
+            width: 70%;
+            font-size: 4vw;
+            display: flex;
+            flex-direction: row;
+            background-color: transparent;
+            font-family: $supportFont;
+            transform: scale(1) !important;
+            margin-left: 30%;
+            padding: 1vw;
             font-size: 2vw;
+
+            h2 {
+                display: none;
+            }
+
+            .option {
+                color: $primaryColor;
+                transition-duration: .4s;
+                font-size: 80%;
+                border-bottom: none;
+            }
         }
     }
 }
 
 .rolled {
     background-color: $blackColor;
-    border-bottom: 1px solid $primaryColor;
     opacity: .8;
-    box-shadow: 0 0 6px 1px $primaryColor,
-        // inset 0 0 100px 100px #191919cc;
-        inset 0px 7vh 5vh -8vh $primaryColor;
 
     .nav__caricature {
         margin: 0 2vw;
