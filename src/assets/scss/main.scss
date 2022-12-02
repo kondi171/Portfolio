@@ -27,11 +27,21 @@
 ::selection {
     background-color: $primaryColor;
     color: $darkColor;
+
+    &[data-theme='Night-Owl'] {
+        background-color: $primaryColorAbyss;
+        color: $darkColorAbyss;
+    }
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 15px;
     background-color: $darkColor;
+
+    &[data-theme='Night-Owl'] {
+        background-color: $primaryColorAbyss;
+        color: $darkColorAbyss;
+    }
 
     &-thumb {
         background: $primaryColor;

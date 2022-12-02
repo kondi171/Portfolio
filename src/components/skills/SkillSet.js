@@ -21,19 +21,58 @@ const SkillSet = () => {
   const { skillsData } = useContext(AppContext);
   const [expandedSkillId, setExpandedSkillId] = useState(0);
   const skillImages = [
-    HTML,
-    CSS,
-    JS,
-    React,
-    SASS,
-    Node,
-    MongoDB,
-    Git,
-    Bootstrap,
-    MySQL,
-    PHP,
-    CPP,
-    Java,
+    {
+      title: 'HTML',
+      source: HTML
+    },
+    {
+      title: 'CSS',
+      source: CSS
+    },
+    {
+      title: 'JavaScript',
+      source: JS
+    },
+    {
+      title: 'React.js',
+      source: React
+    },
+    {
+      title: 'SASS/SCSS',
+      source: SASS
+    },
+    {
+      title: 'Node.js',
+      source: Node
+    },
+    {
+      title: 'MongoDB',
+      source: MongoDB
+    },
+    {
+      title: 'Git',
+      source: Git
+    },
+    {
+      title: 'Bootstrap',
+      source: Bootstrap
+    },
+    {
+      title: 'MySQL',
+      source: MySQL
+    },
+    {
+      title: 'PHP',
+      source: PHP
+    },
+    {
+      title: 'C/C++',
+      source: CPP
+    },
+    {
+      title: 'Java',
+      source: Java
+    },
   ];
   return (
     <section id="skillSet" className="skill-set">
@@ -41,7 +80,7 @@ const SkillSet = () => {
       <div className="skills-wrapper">
         {Object.keys(skillsData).length !== 0 && skillsData.skills.map((skill, index) => {
           const { id, title, sizing, description } = skill;
-          return <Skill id={id} key={title} img={skillImages[index]} title={title} sizing={sizing} description={description} setExpandedSkillId={setExpandedSkillId} />
+          return <Skill id={id} key={title} img={skillImages[index].source} title={title} sizing={sizing} description={description} setExpandedSkillId={setExpandedSkillId} />
         })}
       </div>
       {expandedSkillId && <ExpandedSkill setExpandedSkillId={setExpandedSkillId} skillData={skillsData.skills[expandedSkillId]} skillImages={skillImages} />}

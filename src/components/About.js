@@ -42,9 +42,10 @@ const About = () => {
             <div className="about__content">
                 <div className="content__info">
                     {Object.keys(aboutData).length !== 0 && aboutData.about.map((data, index) => {
+                        const { subtitle, description } = data;
                         return <article className="about-article" key={index} >
-                            <h3>{Object.keys(data).length !== 0 && data.subtitle}</h3>
-                            <span>{Object.keys(data).length !== 0 && data.description}</span>
+                            <h3>{Object.keys(data).length !== 0 && subtitle}</h3>
+                            <p>{Object.keys(data).length !== 0 && description}</p>
                         </article>
                     })}
                 </div>

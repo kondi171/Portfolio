@@ -10,7 +10,18 @@
     padding: 0 10%;
     padding-bottom: 5%;
     margin: 0 auto;
-    // box-shadow: inset 0 0 2px 2px $blackColor;
+
+    &[data-theme='Lambda'] {
+        transition-duration: .4s;
+        background-blend-mode: color-dodge;
+        background-color: transparent;
+    }
+
+    &[data-theme='Abyss'] {
+        transition-duration: .4s;
+        background-blend-mode: color-dodge;
+        background-color: $blackColor;
+    }
 
     .intro {
         display: flex;
@@ -57,11 +68,22 @@
                 margin-bottom: 10px;
                 font-family: $supportFont;
                 color: $secondaryColor;
+                transition-duration: .4s;
+
+                &[data-theme='Abyss'] {
+                    color: $secondaryColorAbyss;
+                }
             }
 
             article {
                 display: block;
                 margin-bottom: 4vw;
+                transition-duration: .4s;
+                color: $darkColor;
+
+                &[data-theme='Abyss'] {
+                    color: $blackColorAbyss;
+                }
             }
         }
     }

@@ -54,7 +54,7 @@ const Menu = () => {
             <div className="menu">
                 <h2>Menu</h2>
                 {Object.keys(navData).length !== 0 && <>
-                    <ScrollLink id="aboutScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="about" smooth={true} duration={400} offset={-130}>{navData.menu.about}</ScrollLink>
+                    <ScrollLink data-theme="dar" id="aboutScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="about" smooth={true} duration={400} offset={-130}>{navData.menu.about}</ScrollLink>
                     <ScrollLink id="skillsScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="skillSet" smooth={true} duration={400} offset={-130}>{navData.menu.skills}</ScrollLink>
                     <ScrollLink id="projectsScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="projects" smooth={true} duration={400} offset={-130}>{navData.menu.projects}</ScrollLink>
                     <ScrollLink id="contactScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="footer" smooth={true} duration={400} offset={-130}>{navData.menu.contact}</ScrollLink>

@@ -1,0 +1,269 @@
+ h4::first-letter[data-theme='Abyss'] {
+     color: $primaryColorAbyss;
+ }
+
+ .footer {
+     background-image: url('./../img/background/footer.jpg');
+     background-size: cover;
+     overflow-y: hidden;
+     background-color: $blackColor;
+     background-attachment: fixed;
+     background-blend-mode: overlay;
+
+     &__content {
+         display: flex;
+         flex-direction: column;
+
+         h4 {
+             width: 100%;
+             color: $bgColor;
+             font-size: 3rem;
+             text-align: center;
+             border-bottom: 2px solid $bgColor;
+
+             &[data-theme='Abyss'] {
+                 color: $primaryColorAbyss;
+             }
+
+             &::first-letter {
+                 font-family: $nonLatinFont;
+                 color: $primaryColor;
+                 font-size: 4rem;
+
+                 &[data-theme='Abyss'] {
+                     color: $primaryColorAbyss;
+                 }
+             }
+         }
+
+         .footer__sources {
+             width: 100%;
+             order: 3;
+             margin-top: 2rem;
+
+             ul {
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
+                 color: $bgColor;
+                 list-style-type: none;
+
+
+
+                 li {
+                     display: flex;
+                     width: 80%;
+                     justify-content: space-between;
+                     font-size: 2rem;
+                     margin: .5rem;
+                     text-align: justify;
+
+                     a {
+                         text-decoration: none;
+                         color: $primaryColor;
+
+                         &[data-theme='Abyss'] {
+                             color: $primaryColorAbyss;
+                         }
+                     }
+
+                     &:first-of-type {
+                         margin-top: 2rem;
+                     }
+                 }
+             }
+         }
+
+         .footer__contact {
+             width: 100%;
+             order: 2;
+
+             .contact {
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
+                 color: $bgColor;
+
+                 span {
+                     display: flex;
+                     width: 80%;
+                     justify-content: space-between;
+                     font-size: 2rem;
+                     margin: .5rem;
+
+                     &:nth-of-type(odd) .fa {
+                         color: $primaryColor;
+                     }
+
+                     &:nth-last-of-type(odd) &[data-theme='Abyss'] .fa {
+                         color: $primaryColorAbyss;
+                     }
+
+                     &:first-of-type {
+                         margin-top: 2rem;
+                     }
+                 }
+             }
+         }
+
+         .footer__author {
+             width: 100%;
+             order: 1;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             margin: 2rem 0;
+
+
+             .img-wrapper {
+                 border-radius: 2%;
+                 outline: 2px solid $primaryColor;
+                 outline-offset: 5px;
+                 margin: 15%;
+                 transform: rotate(45deg);
+                 width: 20vh;
+                 height: 20vh;
+                 overflow: hidden;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+
+                 &[data-theme='Abyss'] {
+                     outline: 2px solid $primaryColorAbyss;
+                 }
+
+                 img {
+                     width: 200%;
+                     height: 200%;
+                     z-index: -10;
+                 }
+             }
+
+
+
+             .socials {
+                 display: flex;
+                 width: 100%;
+                 justify-content: space-evenly;
+                 align-items: center;
+                 font-size: 24px;
+                 margin-top: 20px;
+                 @include tooltip($primaryColor, $darkColor, "bottom");
+
+                 &[data-theme='Abyss'] {
+                     @include tooltip($primaryColorAbyss, $darkColorAbyss, "bottom");
+                 }
+
+                 a {
+                     font-size: 220%;
+                     color: $primaryColor;
+
+                     &[data-theme='Abyss'] {
+                         color: $primaryColorAbyss;
+                     }
+                 }
+             }
+         }
+     }
+
+     .developer {
+         opacity: .9;
+         width: 100%;
+         margin: 0 auto;
+         color: $bgColor;
+         text-shadow: 2px 2px 0 $blackColor,
+             -2px 2px 0 $blackColor,
+             2px -2px 0 $blackColor,
+             -2px -2px 0 $blackColor;
+         background-color: $darkColor;
+         font-size: 200%;
+         text-align: center;
+         padding: 10px;
+         font-family: $nonLatinFont;
+         margin-top: 10px;
+     }
+
+ }
+
+ @media (max-width: 1024) and (orientation: landscape) {
+     .footer {
+         &__content &__author {
+             .img-wrapper {
+                 width: 20vw;
+                 height: 20vw;
+             }
+         }
+     }
+ }
+
+ @media (min-width: 800px) {
+     .footer {
+         &__content {
+
+             .footer__contact .contact span {
+                 font-size: 300%;
+             }
+
+             .footer__sources ul li {
+                 font-size: 300%;
+             }
+         }
+
+     }
+ }
+
+ @media (min-width: 1024px) {
+     .footer {
+         clip-path: polygon(0 0, 100% 9%, 100% 100%, 0% 100%);
+         margin-top: -10%;
+         padding-top: 5%;
+
+         &__content {
+             flex-direction: row;
+             justify-content: space-evenly;
+
+             .footer__author,
+             .footer__contact,
+             .footer__sources {
+                 width: 25%;
+             }
+
+             .footer__author {
+                 img {
+
+                     margin-top: 0;
+                 }
+
+                 .socials a {
+                     transition-duration: .4s;
+
+                     &:hover {
+                         color: $secondaryColor;
+                     }
+                 }
+             }
+
+             .footer__contact .contact span {
+                 font-size: 200%;
+             }
+
+             .footer__sources ul li {
+                 font-size: 200%;
+
+                 a {
+                     transition-duration: .4s;
+
+                     &:hover {
+                         color: $secondaryColor;
+                     }
+                 }
+
+             }
+         }
+
+         .developer {
+             opacity: .8;
+             background-color: #000;
+         }
+     }
+ }

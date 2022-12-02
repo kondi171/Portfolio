@@ -9,11 +9,15 @@
     align-items: center;
     box-shadow: inset 0px 7vh 5vh -8vh $primaryColor;
     z-index: 10;
-    transition-duration: .4s;
     font-size: 150%;
     padding: 2%;
     font-family: $supportFont;
     max-height: 20%;
+    transition-duration: .4s;
+
+    &[data-theme='Abyss'] {
+        box-shadow: inset 0px 7vh 5vh -8vh $primaryColorAbyss;
+    }
 
     .progress-bar {
         position: absolute;
@@ -34,6 +38,10 @@
             background-color: $primaryColor;
             border-radius: 20px;
         }
+
+        &[data-theme="Abyss"]::-webkit-progress-value {
+            background-color: $primaryColorAbyss;
+        }
     }
 
 
@@ -43,10 +51,14 @@
     .fa-bars {
         position: relative;
         margin: 4vw;
-        color: $supportColor;
         z-index: 2;
         font-size: 150%;
         color: $primaryColor;
+        transition-duration: .4s;
+
+        &[data-theme='Abyss'] {
+            color: $primaryColorAbyss;
+        }
     }
 
     .menu {
@@ -80,6 +92,20 @@
             font-size: 40%;
             margin: 10% 0;
             border-bottom: 2px solid $primaryColor;
+            transition-duration: .4s;
+
+            &[data-theme='Abyss'] {
+                color: $primaryColorAbyss;
+                border-color: $primaryColorAbyss;
+
+                &.active,
+                &:hover {
+                    color: $blackColorAbyss;
+                    text-shadow: 1px 1px 0 $primaryColorAbyss,
+                        -1px 1px 0 $primaryColorAbyss,
+                        -1px -1px 0 $primaryColorAbyss;
+                }
+            }
 
             &.active {
                 color: $blackColor;
@@ -124,7 +150,15 @@
                 color: $secondaryColor;
                 transform: scale(1.5);
             }
+
+            &[data-theme='Abyss'] {
+                &:hover {
+                    color: $secondaryColorAbyss;
+                }
+            }
         }
+
+
     }
 
     .settings {
@@ -137,26 +171,45 @@
         background-color: darken($darkColor, 3%);
         border-radius: 4px;
         opacity: .9;
-        transition-duration: .4s;
-        padding: 25%;
+        padding: 20%;
         width: 400%;
+        transition-duration: .4s;
+
+        &[data-theme='Abyss'] {
+            background-color: darken($darkColorAbyss, 3%);
+        }
 
         &__btn {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
             margin: 2vh;
             z-index: 100000;
 
             span {
-                font-size: 3vh;
+                display: block;
+                width: 40%;
+                font-size: 2vh;
                 color: $primaryColor;
+                text-align: center;
+                transition-duration: .4s;
+
+                &[data-theme='Abyss'] {
+                    color: $primaryColorAbyss;
+                }
             }
 
             .fa {
+                display: block;
+                width: 20%;
                 font-size: 4vh;
                 color: $primaryColor;
                 margin: 5%;
+                transition-duration: .4s;
+
+                &[data-theme='Abyss'] {
+                    color: $primaryColorAbyss;
+                }
             }
 
             &:hover {
@@ -169,6 +222,11 @@
             color: $primaryColor;
             text-align: center;
             font-size: 3vh;
+            transition-duration: .4s;
+
+            &[data-theme='Abyss'] {
+                color: $primaryColorAbyss;
+            }
         }
 
         &.visible {

@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
   const [skillsData, setSkillsData] = useState({});
   const [projectsData, setProjectsData] = useState({});
   const [footerData, setFooterData] = useState({});
-
+  const [theme, setTheme] = useState('Lambda');
   return (
     <AppContext.Provider
       value={{
@@ -23,6 +23,8 @@ const AppProvider = ({ children }) => {
         setProjectsData,
         footerData,
         setFooterData,
+        theme,
+        setTheme
       }}>
       {children}
     </AppContext.Provider>

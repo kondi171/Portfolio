@@ -34,7 +34,7 @@ const Nav = () => {
     }, []);
 
     return (
-        <animated.nav className="nav" style={navFade}>
+        <animated.nav id="nav" className="nav" style={navFade}>
             <Progress />
             <Settings />
             <Caricature />

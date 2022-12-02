@@ -1,24 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../AppContext";
-import Skill from './Skill';
-import HTML from "../../assets/img/stack/HTML.png";
-import CSS from "../../assets/img/stack/CSS.png";
-import JS from "../../assets/img/stack/JS.png";
-import React from "../../assets/img/stack/React.png";
-import SASS from "../../assets/img/stack/SASS.png";
-import Node from "../../assets/img/stack/Node.png";
-import MongoDB from "../../assets/img/stack/MongoDB.png";
-import Git from "../../assets/img/stack/Git.png";
-import Bootstrap from "../../assets/img/stack/Bootstrap.png";
-import MySQL from "../../assets/img/stack/MySQL.png";
-import PHP from "../../assets/img/stack/PHP.png";
-import CPP from "../../assets/img/stack/CPP.png";
-import Java from "../../assets/img/stack/Java.png";
 
 const ExpandedSkill = ({ setExpandedSkillId, skillData, skillImages }) => {
 
   const [skillImg, setSkillImg] = useState(null);
-  const { skillsData } = useContext(AppContext);
+  const { skillsData, theme } = useContext(AppContext);
   const handleCollapse = () => {
     const modal = document.getElementById('modal');
     const overlay = document.querySelector('.modal-overlay');
@@ -38,28 +24,25 @@ const ExpandedSkill = ({ setExpandedSkillId, skillData, skillImages }) => {
     overlay.style.transitionDuration = '0.4s';
     modal.style.transform = 'scale(1)';
     modal.style.transitionDuration = '0.4s';
-
-    if (skillData.title === "HTML") setSkillImg(HTML);
-    else if (skillData.title === "CSS") setSkillImg(CSS);
-    else if (skillData.title === "JavaScript") setSkillImg(JS);
-    else if (skillData.title === "React.js") setSkillImg(React);
-    else if (skillData.title === "SASS/SCSS") setSkillImg(SASS);
-    else if (skillData.title === "Node.js") setSkillImg(Node);
-    else if (skillData.title === "MongoDB") setSkillImg(MongoDB);
-    else if (skillData.title === "Git") setSkillImg(Git);
-    else if (skillData.title === "Bootstrap") setSkillImg(Bootstrap);
-    else if (skillData.title === "MySQL") setSkillImg(MySQL);
-    else if (skillData.title === "PHP") setSkillImg(PHP);
-    else if (skillData.title === "C/C++") setSkillImg(CPP);
-    else if (skillData.title === "Java") setSkillImg(Java);
-  }, [skillData]);
+    const expandedSkillImage = skillImages.find(img => skillData.title === img.title);
+    setSkillImg(expandedSkillImage.source);
+  }, [skillData, skillImages]);
 
   window.addEventListener('resize', () => {
     if (window.innerWidth <= 1024) setExpandedSkillId(null);
   });
-  useEffect(() => {
 
-  })
+  useEffect(() => {
+    const newTheme = theme === 'Lambda' ? 'Abyss' : 'Lambda';
+    console.log(newTheme);
+    const skill = document.querySelector('.stack-item--modal');
+    const strongs = document.querySelectorAll('.stack-item--modal strong');
+    skill.dataset.theme = newTheme;
+    strongs.forEach(strong => strong.dataset.theme = newTheme);
+    for (let i = 0; i < skill.childNodes.length; i++) {
+      skill.childNodes[i].dataset.theme = newTheme;
+    }
+  }, [theme]);
   return (
     <div className="modal-overlay">
       <div id="modal" className="stack-item stack-item--modal">
