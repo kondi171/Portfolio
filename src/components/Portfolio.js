@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-
 import About from "./About";
 import Footer from "./Footer";
 import Header from "./Header";
-import Projects from "./Projects";
+import Projects from "./projects/Projects";
 import SkillSet from "./skills/SkillSet";
 import Loading from "./features/loading/Loading";
 
@@ -27,17 +26,6 @@ const Portfolio = () => {
     document.addEventListener("touchstart", function () { }, true);
     return (
         <div className="wrapper" >
-            {/* <progress className="progress-bar" value="10" max="100"></progress> */}
-            {/* {init ? <animated.div style={fadePage}>
-                <Header />
-                <About />
-                <SkillSet />
-                <Projects />
-                <Footer />
-            </animated.div> : <>
-                <Loading />
-            </>
-            } */}
             <animated.div style={fadePage}>
                 <Header />
                 <About />

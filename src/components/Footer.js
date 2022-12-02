@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import authorImage from "./../assets/img/avatar/Konrad-rotate.png";
-import { AppContext } from "../AppContext";
+import { AppContext } from "./flow/AppContext";
 const Footer = () => {
   const { photoBy, on, contact, sources } = useContext(AppContext).footerData;
   const sourcesList = [

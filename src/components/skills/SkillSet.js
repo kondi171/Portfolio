@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { AppContext } from '../../AppContext';
+import { AppContext } from '../flow/AppContext';
 import ExpandedSkill from './ExpandedSkill';
 import Skill from './Skill';
 import HTML from "../../assets/img/stack/HTML.png";

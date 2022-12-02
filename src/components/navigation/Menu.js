@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext, useRef } from "react";
 import { Link as ScrollLink } from 'react-scroll';
-import { AppContext } from "../../AppContext";
+import { AppContext } from "../flow/AppContext";
 
 const Menu = () => {
 

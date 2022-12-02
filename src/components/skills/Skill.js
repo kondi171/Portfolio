@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { AppContext } from "../../AppContext";
+import { AppContext } from "../flow/AppContext";
 
 const Skill = ({ id, img, title, description, sizing, setExpandedSkillId }) => {
 

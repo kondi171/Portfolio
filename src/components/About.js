@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../AppContext";
+import { AppContext } from "./flow/AppContext";
 import avatar from './../assets/img/avatar/AvatarMaker.png';
 
 const About = () => {

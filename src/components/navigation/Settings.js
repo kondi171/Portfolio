@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useSpring, animated } from "react-spring";
-import { AppContext } from "../../AppContext";
+import { AppContext } from "../flow/AppContext";
 const Settings = () => {
 
     const { navData, setNavData, setAboutData, setSkillsData, setProjectsData, setFooterData, theme, setTheme } = useContext(AppContext);
