@@ -1,12 +1,612 @@
 {
-  "pl": [
-    {
-      "title": "Projekty"
-    }
-  ],
-  "eng": [
-    {
-      "title": "Projects"
-    }
-  ]
+  "eng": {
+    "title": "Projects",
+    "projects": [
+      {
+        "id": "BlockBall",
+        "name": "Block Ball",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+          },
+          {
+            "title": "Game Rules",
+            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+          },
+          {
+            "title": "Documentation",
+            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
+          },
+          {
+            "title": "Installation",
+            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "C++",
+            "Allegro"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/BlockBall"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://github.com/kondi171/BlockBall"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Panzers1916",
+        "name": "Panzers 1916",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "A game based on Tank 1990 game released on pegasus. This project is a little bit different, because there is on co-operation, instead players fight each other."
+          },
+          {
+            "title": "Game Rules",
+            "content": "The board has been divided into 26 x 13 tiles, excluding black border. Players and their bullets can only move around fixed grid. For each player was reserved part of screen where is stats are displayed screen where his stats and player name are displayed. There are 4 types of blocks on the Board:<ul><li> Brick - A static destructible unit that can be obtained for 100 points for each hit and destruction, </li><li> Stone - Static and indestructible unit, </li><li> Water - A unit that only bullets can pass through, </li><li> Empty - A block that players can move freely on. </li></ul>Due to the Grid template, the player can only move in 4 directions, no indirect route possible. After firing the maximum number of bullets allowed in a burst (set to two begins a shot restriction - on the board can be a maximum of two shoots per player, when player reach limit, the next time he can fire only when there is a bullet collisionand the bullets will disappear from the board. Each player has 3 lives, each life taken from the opponent awards 1000 points to the player who managed to hit the opponent,and takes the life of the unit hit. For every hit destructible bricks, the player gets 100 points, which diversify the game and decide which player was better in a givengame. Every tank can fire two bullets in one burst. When the life of one of the players reaches zero - the game is over."
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>W- go up</li><li>S - go down</li><li>A - go left</li><li>D - go right</li><li>Space - shoot</li></ul></li><li>Second Player:<ul><li> Up Arrow - go up</li><li> Down Arrow - go down</li><li> Left Arrow - go left</li><li> Right Arrow - go right</li><li> K - shoot</li></ul></li></ol>"
+          },
+          {
+            "title": "Documentation",
+            "content": "Whole documentation is in <strong>documentation</strong> folder after running <strong>index.html</strong> file."
+          },
+          {
+            "title": "How to run?",
+            "content": "First of all install a Java Runtime Environment (JRE) or Java Development Kit (JDK) in version above or equal 12! After that run Panzers 1916®.jar file. <br/>Download:<a href='https://www.java.com/pl/download/manual.jsp'>Java Runtime Environment</a><a href='https://www.oracle.com/pl/java/technologies/downloads'>Java Development Kit </a><br/><strong>ATTENTION!</strong> Full screen does not work on some screens! Epilepsy warning!"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "Java",
+            "Swing",
+            "AWT"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/Panzers1916"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://github.com/kondi171/Panzers1916"
+            }
+          ]
+        }
+      },
+      {
+        "id": "MultiLines",
+        "name": "Multi Lines",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Single Page Application implemented with React.js. Ready to use in local game. Multiplayer is not implemented yet."
+          },
+          {
+            "title": "Game Rules",
+            "content": "Game is played in 5 rounds. Survive as long as you can, the longer you are on the board, the more points you get. Dodge walls, own trails and other players. Smash your enemies, blocking their way. The player with the most points wins. Winner take everything!"
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Red player:<ul><li>W - go up</li><li>S - go down</li><li>A - go left</li><li>D - go right</li></ul></li><li>Green player:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Blue player:<ul><li>I - go up</li><li>K - go down</li><li>J - go left</li><li>L - go right</li></ul></li><li>Yellow player:<ul><li>Num8 - go up</li><li>Num5 - go down</li><li>Num4 - go left</li><li>Num6 - go right</li></ul></li></ol>"
+          },
+          {
+            "title": "How to run?",
+            "content": "Visit deployment: <a href='https://multilines.netlify.app'>multilines.netlify.app</a> "
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/MultiLines"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://multilines.netlify.app"
+            }
+          ]
+        }
+      },
+      {
+        "id": "CzasNaMasaz",
+        "name": "Czas Na Masaż",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+          },
+          {
+            "title": "Game Rules",
+            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+          },
+          {
+            "title": "Documentation",
+            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
+          },
+          {
+            "title": "Installation",
+            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "C++",
+            "Allegro"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/BlockBall"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://github.com/kondi171/BlockBall"
+            }
+          ]
+        }
+      },
+      {
+        "id": "LazyTaste",
+        "name": "Lazy Taste",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+          },
+          {
+            "title": "Game Rules",
+            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+          },
+          {
+            "title": "Documentation",
+            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
+          },
+          {
+            "title": "Installation",
+            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "C++",
+            "Allegro"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/BlockBall"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://github.com/kondi171/BlockBall"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pl": {
+    "title": "Projekty",
+    "projects": [
+      {
+        "id": "BlockBall",
+        "name": "Block Ball",
+        "representation": [
+          {
+            "title": "Opis",
+            "content": "Gra umożliwiająca granie w trybie versus, a także przeciwko zaprogramowanemu komputerowi w różnych poziomach trudności. BlockBall został zaimplementowany w języku C++ z biblioteką Allegro 5."
+          },
+          {
+            "title": "Zasady Gry",
+            "content": "Każde uderzenie bloku przez piłkę gracza poszerza sumę punktów o 100, a także zwiększa mnożnik prędkości piłki, jednakże jeżeli przeciwnik uderzy swoją piłką o paletkę gracza, to zabierane mu jest 150 punktów. Każde życie warte jest 1000 punktów, jeżeli gracz straci życie to taka suma jest zabierana z wyniku gracza, jednak jeżeli uda mu się zachować dodatkowe życia, to 1000 punktów jest mnożone przez ilość pozostałych żyć i doliczane do wyniku końcowego. Utrata wszystkich żyć przez jednego z graczy wiąże się z końcem gry."
+          },
+          {
+            "title": "Sterowanie",
+            "content": "<ol><li>Menu:<ul><li>Strzałka w górę - przesuń kursor w górę</li><li>Strzałka w dół - przesuń kursow w dół</li><li>Enter - Zatwierdź</li></ul></li><li>Gracz pierwszy:<ul><li> Strzałka w górę - wypuść piłkę</li><li> Strzałka w lewo - przesuń paletkę w lewo</li><li> Strzałka w prawo - przesuń paletkę w prawo</li></ul></li><li>Gracz drugi:<ul><li>S - wypuść piłkę </li><li>A - przesuń paletkę w lewo </li><li>D - przesuń paletkę w prawo </li></ul></li><li>Pause:<ul><li>Escape - włącz pauzę</li><li>Spacja - kontynuuj grę</li><li>Enter - wyjdź z gry</li></ul></li><li>Pauza:<ul><li>O - załaduj poprzedni stan gry </li><li>P - zapisz stan gry </li></ul></li></ol>"
+          },
+          {
+            "title": "Dokumentacja",
+            "content": "Dokumentacja została wygenerowana z pomocą programu Doxygen w wersji 1.9.1. Została zapisana w formacie html w oddzielnym folderze, w którym znajdują się niezbędne pliki potrzebne do uruchomienia dokumentacji. Aby uruchomić dokumentacje można zainstalować program Doxygen i wgrać do niego projekt, najprościej jednak jest otworzyć folder html i otworzenie pliku index.html: <strong>Blockball &gt; html &gt; index.html</strong>"
+          },
+          {
+            "title": "Instalacja",
+            "content": "Najłatwiejszym sposobem uruchomienia projektu jest otwarcie pliku <i>BlockBall.exe.</i> Grę można jednak zainstalować, w tym celu należy podążać tą ścieżką: <strong>intaller &gt; Setup Files &gt; BlockBall.exe</strong>"
+          }
+        ],
+        "techStack": {
+          "title": "Stos Technologiczny",
+          "stack": [
+            "C++",
+            "Allegro"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Odwiedź",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Odwiedź repozytorium na Githubie",
+              "url": "https://github.com/kondi171/BlockBall"
+            },
+            {
+              "icon": "link",
+              "content": "Odwiedź stronę",
+              "url": "https://github.com/kondi171/BlockBall"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Panzers1916",
+        "name": "Panzers 1916",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "A game based on Tank 1990 game released on pegasus. This project is a little bit different, because there is on co-operation, instead players fight each other."
+          },
+          {
+            "title": "Game Rules",
+            "content": "The board has been divided into 26 x 13 tiles, excluding black border. Players and their bullets can only move around fixed grid. For each player was reserved part of screen where is stats are displayed screen where his stats and player name are displayed. There are 4 types of blocks on the Board:<ul><li> Brick - A static destructible unit that can be obtained for 100 points for each hit and destruction, </li><li> Stone - Static and indestructible unit, </li><li> Water - A unit that only bullets can pass through, </li><li> Empty - A block that players can move freely on. </li></ul>Due to the Grid template, the player can only move in 4 directions, no indirect route possible. After firing the maximum number of bullets allowed in a burst (set to two begins a shot restriction - on the board can be a maximum of two shoots per player, when player reach limit, the next time he can fire only when there is a bullet collisionand the bullets will disappear from the board. Each player has 3 lives, each life taken from the opponent awards 1000 points to the player who managed to hit the opponent,and takes the life of the unit hit. For every hit destructible bricks, the player gets 100 points, which diversify the game and decide which player was better in a givengame. Every tank can fire two bullets in one burst. When the life of one of the players reaches zero - the game is over."
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>W- go up</li><li>S - go down</li><li>A - go left</li><li>D - go right</li><li>Space - shoot</li></ul></li><li>Second Player:<ul><li> Up Arrow - go up</li><li> Down Arrow - go down</li><li> Left Arrow - go left</li><li> Right Arrow - go right</li><li> K - shoot</li></ul></li></ol>"
+          },
+          {
+            "title": "Documentation",
+            "content": "Whole documentation is in <strong>documentation</strong> folder after running <strong>index.html</strong> file."
+          },
+          {
+            "title": "How to run?",
+            "content": "First of all install a Java Runtime Environment (JRE) or Java Development Kit (JDK) in version above or equal 12! After that run Panzers 1916®.jar file. <br/>Download:<a href='https://www.java.com/pl/download/manual.jsp'>Java Runtime Environment</a><a href='https://www.oracle.com/pl/java/technologies/downloads'>Java Development Kit </a><br/><strong>ATTENTION!</strong> Full screen does not work on some screens! Epilepsy warning!"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "Java",
+            "Swing",
+            "AWT"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/Panzers1916"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://github.com/kondi171/Panzers1916"
+            }
+          ]
+        }
+      },
+      {
+        "id": "MultiLines",
+        "name": "Multi Lines",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Single Page Application implemented with React.js. Ready to use in local game. Multiplayer is not implemented yet."
+          },
+          {
+            "title": "Game Rules",
+            "content": "Game is played in 5 rounds. Survive as long as you can, the longer you are on the board, the more points you get. Dodge walls, own trails and other players. Smash your enemies, blocking their way. The player with the most points wins. Winner take everything!"
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Red player:<ul><li>W - go up</li><li>S - go down</li><li>A - go left</li><li>D - go right</li></ul></li><li>Green player:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Blue player:<ul><li>I - go up</li><li>K - go down</li><li>J - go left</li><li>L - go right</li></ul></li><li>Yellow player:<ul><li>Num8 - go up</li><li>Num5 - go down</li><li>Num4 - go left</li><li>Num6 - go right</li></ul></li></ol>"
+          },
+          {
+            "title": "How to run?",
+            "content": "Visit deployment: <a href='https://multilines.netlify.app'>multilines.netlify.app</a> "
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/MultiLines"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://multilines.netlify.app"
+            }
+          ]
+        }
+      },
+      {
+        "id": "CzasNaMasaz",
+        "name": "Czas Na Masaż",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+          },
+          {
+            "title": "Game Rules",
+            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+          },
+          {
+            "title": "Documentation",
+            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
+          },
+          {
+            "title": "Installation",
+            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "C++",
+            "Allegro"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/BlockBall"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://github.com/kondi171/BlockBall"
+            }
+          ]
+        }
+      },
+      {
+        "id": "LazyTaste",
+        "name": "Lazy Taste",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+          },
+          {
+            "title": "Game Rules",
+            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
+          },
+          {
+            "title": "Control keys",
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+          },
+          {
+            "title": "Documentation",
+            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
+          },
+          {
+            "title": "Installation",
+            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "C++",
+            "Allegro"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171",
+              "link": "https://github.com/kondi171"
+            },
+            {
+              "name": "@kwypych4",
+              "link": "https://github.com/kwypych4"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/BlockBall"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://github.com/kondi171/BlockBall"
+            }
+          ]
+        }
+      }
+    ]
+  }
 }

@@ -23,6 +23,7 @@ const Portfolio = () => {
             }, 300);
         };
     }, []);
+
     document.addEventListener("touchstart", function () { }, true);
     return (
         <div className="wrapper" >

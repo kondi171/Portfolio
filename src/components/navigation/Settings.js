@@ -179,13 +179,13 @@ const Settings = () => {
         <div className="settings-wrapper">
             <animated.i onClick={e => handleSettings(e)} className="fa fa-cog" aria-hidden="true" style={rotateCog}></animated.i>
             <div id="settings" className="settings">
-                <h4>{Object.keys(navData).length !== 0 && navData.settings.changeLanguage}</h4>
+                <h4>{navData?.settings?.changeLanguage}</h4>
                 <div onClick={handleChangeLanguage} className="settings__btn">
                     <span>PL</span>
                     {language ? <i className="fa fa-toggle-off" aria-hidden="true"></i> : <i className="fa fa-toggle-on" aria-hidden="true"></i>}
                     <span>ENG</span>
                 </div>
-                <h4>{Object.keys(navData).length !== 0 && navData.settings.changeTheme}</h4>
+                <h4>{navData?.settings?.changeTheme}</h4>
                 <div onClick={handleChangeTheme} className="settings__btn">
                     <span>Abyss</span>
                     {theme === "Lambda" ? <i className="fa fa-toggle-off" aria-hidden="true"></i> : <i className="fa fa-toggle-on" aria-hidden="true"></i>}

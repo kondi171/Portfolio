@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Progress = () => {
+
   const [pageHeight, setPageHeight] = useState(0);
   const [currentScroll, setCurrentScroll] = useState(0);
 
@@ -8,18 +9,26 @@ const Progress = () => {
     const body = document.body;
     const html = document.documentElement;
     const height = Math.max(body.getBoundingClientRect().height, html.getBoundingClientRect().height);
-    setPageHeight(height - window.innerHeight);
+    setPageHeight(height);
   }
-  window.addEventListener('scroll', () => {
+
+  const settingsVisibility = () => {
     const settings = document.getElementById('settings');
     settings.classList.remove('visible');
     setCurrentScroll(window.scrollY);
-  });
-  window.addEventListener('resize', () => {
-    countProgressMax();
-  })
+  }
+
   useEffect(() => {
     countProgressMax();
+    window.addEventListener('scroll', settingsVisibility);
+    window.addEventListener('resize', countProgressMax);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      window.removeEventListener('scroll', settingsVisibility);
+      window.removeEventListener('scroll', countProgressMax);
+    }
   }, []);
 
   return (

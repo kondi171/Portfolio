@@ -21,10 +21,10 @@ const Menu = () => {
         setMenuExpanded(expanded);
     }
 
-    window.addEventListener('scroll', () => {
+    const handleMenuVisibility = () => {
         const projects = document.getElementById('projectsScrollLink');
         const contact = document.getElementById('contactScrollLink');
-        if (Object.keys(navData).length !== 0) {
+        if (navData?.menu) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 projects.classList.remove('active');
                 contact.classList.add('active');
@@ -33,17 +33,23 @@ const Menu = () => {
                 contact.classList.remove('active');
             }
         }
-    });
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleMenuVisibility);
+    }, []);
 
     useEffect(() => {
         const menu = document.querySelector('.menu');
-        if (menuExpanded) {
-            menu.style.transform = 'scale(1)';
-        }
-        else {
-            menu.style.transform = 'scale(0)';
-        }
+        if (menuExpanded) menu.style.transform = 'scale(1)';
+        else menu.style.transform = 'scale(0)';
     }, [menuExpanded]);
+
+    useEffect(() => {
+        return () => {
+            window.removeEventListener('scroll', handleMenuVisibility);
+        }
+    }, []);
 
     return (
         <>
@@ -53,7 +59,7 @@ const Menu = () => {
             }
             <div className="menu">
                 <h2>Menu</h2>
-                {Object.keys(navData).length !== 0 && <>
+                {navData?.menu && <>
                     <ScrollLink data-theme="dar" id="aboutScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="about" smooth={true} duration={400} offset={-130}>{navData.menu.about}</ScrollLink>
                     <ScrollLink id="skillsScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="skillSet" smooth={true} duration={400} offset={-130}>{navData.menu.skills}</ScrollLink>
                     <ScrollLink id="projectsScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="projects" smooth={true} duration={400} offset={-130}>{navData.menu.projects}</ScrollLink>

@@ -58,7 +58,7 @@ const Header = () => {
             let letterAdding = 0;
             const letterInterval = setInterval(() => {
                 if (letterAdding >= txt.length) clearInterval(letterInterval);
-                else {
+                else if (letterAdding < txt.length) {
                     spnText.textContent += txt[letterAdding];
                     letterAdding++;
                 }
@@ -68,7 +68,12 @@ const Header = () => {
             spnCursor.classList.toggle('active');
         }, 600);
     }, []);
-
+    useEffect(() => {
+        return () => {
+            setTitleIndex(null);
+            setResolutionWidth(null);
+        }
+    }, []);
     return (
         <header id="header" className="header">
             <Nav />

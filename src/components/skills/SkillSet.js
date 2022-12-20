@@ -15,6 +15,7 @@ import MySQL from "../../assets/img/stack/MySQL.png";
 import PHP from "../../assets/img/stack/PHP.png";
 import CPP from "../../assets/img/stack/CPP.png";
 import Java from "../../assets/img/stack/Java.png";
+import { useEffect } from 'react';
 
 const SkillSet = () => {
 
@@ -74,6 +75,16 @@ const SkillSet = () => {
       source: Java
     },
   ];
+  useEffect(() => {
+    const skillVisibility = document.querySelector('.visibility');
+    if (expandedSkillId === 0) {
+      skillVisibility.style.visibility = 'hidden';
+    } else {
+      skillVisibility.style.visibility = 'visible';
+    }
+
+  }, [expandedSkillId]);
+
   return (
     <section id="skillSet" className="skill-set">
       <h2>{Object.keys(skillsData).length !== 0 && skillsData.title}</h2>
@@ -83,8 +94,9 @@ const SkillSet = () => {
           return <Skill id={id} key={title} img={skillImages[index].source} title={title} sizing={sizing} description={description} setExpandedSkillId={setExpandedSkillId} />
         })}
       </div>
-      {expandedSkillId && <ExpandedSkill setExpandedSkillId={setExpandedSkillId} skillData={skillsData.skills[expandedSkillId]} skillImages={skillImages} />}
-
+      <div className="visibility">
+        {expandedSkillId && <ExpandedSkill setExpandedSkillId={setExpandedSkillId} skillData={skillsData.skills[expandedSkillId]} skillImages={skillImages} />}
+      </div>
     </section>
   );
 }

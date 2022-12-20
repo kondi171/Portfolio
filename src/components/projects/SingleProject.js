@@ -1,63 +1,86 @@
 import { useContext } from "react";
 import { AppContext } from './../flow/AppContext';
-import testImg from './../../assets/img/projects/BlockBall/test.jpg'
+import Footer from './../Footer';
+import testImg from './../../assets/img/projects/test.jpg'
 import CPP from './../../assets/img/stack/CPP.png'
+import { useEffect } from "react";
+import { useState } from "react";
+
 const SingleProject = () => {
-    // const { projectsData } = useContext('AppContext');
+    const { projectsData } = useContext(AppContext);
+    const [projectID, setProjectID] = useState('BlockBall');
+    const [project, setProject] = useState({});
+    // change to LazyTaste on deploy
+
+    useEffect(() => {
+        // if (!projectsData) {
+        //     fetch('../language/projects.json')
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             setProject(data.pl);
+        //         });
+        // }
+        // console.log(projectsData);
+    }, []);
+
+    useEffect(() => {
+        const projectLocation = window.location.href;
+        const linkSplits = projectLocation.split("/");
+        setProjectID(linkSplits[linkSplits.length - 1]);
+    }, [projectID]);
+
+    useEffect(() => {
+        // console.log(projectsData);
+        const currentProject = projectsData.projects.filter(project => project.id === projectID);
+        setProject(currentProject[0]);
+        console.log(currentProject);
+    }, [projectsData, projectID]);
     return (
         <section className="project">
             <div className="back-to-main-page-button">
                 <i className="fa fa-times" aria-hidden="true"></i>
             </div>
-            <h2>ProjectName</h2>
+            <h2>{project?.name}</h2>
             <div className="image-stack">
                 <img src={testImg} alt="testIMG" />
             </div>
             <div className="tech-stack">
-                <h3 className="tech-stack__header">Stack</h3>
+                <h3 className="tech-stack__header">{project?.techStack?.title}</h3>
                 <div className="tech-stack__items">
-                    <div className="tech-stack__item">
-                        <img src={CPP} alt="C++" />
-                        <h4>C++</h4>
-                    </div>
-                    <div className="tech-stack__item">
-                        <img src={CPP} alt="C++" />
-                        <h4>C++</h4>
-                    </div>
+                    {project?.techStack?.stack.map(stack => {
+                        return <div key={stack} className="tech-stack__item">
+                            <img src={CPP} alt={stack} />
+                            <h4>{stack}</h4>
+                        </div>
+                    })}
                 </div>
             </div>
             <div className="content">
-                <div className="content__item">
-                    <h3>Description</h3>
-                    <p>Desktop Application implemented in C++ with Allegro 5 Library.</p>
-                </div>
-                <div className="content__item">
-                    <h3>Game instructions</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, asperiores numquam nemo laborum alias cupiditate facere aspernatur ea aliquam ratione nihil quia reiciendis at? Enim expedita, mollitia nostrum autem amet excepturi ipsa fugit, tempore sapiente tempora quo, eveniet nemo laudantium.</p>
-                </div>
-                <div className="content__item">
-                    <h3>How to run?</h3>
-                    <p>Download package and install application then run it.</p>
-                </div>
+                {project?.representation?.map(representation => {
+                    const { title, content } = representation;
+                    return <div key={title} className="content__item">
+                        <h3>{title}</h3>
+                        <p dangerouslySetInnerHTML={{ __html: content }}></p>
+                    </div>
+                })}
             </div>
             <div className="authors">
-                <h3 className="authors__header">Authors</h3>
+                <h3 className="authors__header">{project?.authors?.title}</h3>
                 <ul>
-                    <li>@Konrad Nowak</li>
-                    <li>@Kamil Wypych</li>
+                    {project?.authors?.authors?.map(author => <li key={author.name}><a href={author.link}>{author.name}</a></li>)}
                 </ul>
             </div>
             <div className="links">
-                <h3 className="links__header">Visit</h3>
-                <div className="link">
-                    <i className="fa fa-github" aria-hidden="true"></i>
-                    <a href="#">Visit repository on github</a>
-                </div>
-                <div className="link">
-                    <i className="fa fa-github" aria-hidden="true"></i>
-                    <a href="#">Visit website</a>
-                </div>
+                <h3 className="links__header">{project?.links?.title}</h3>
+                {project?.links?.links?.map(link => {
+                    const { url, content, icon } = link;
+                    return <div key={url} className="link">
+                        <i className={`fa fa-${icon}`} aria-hidden="true"></i>
+                        <a href={url}>{content}</a>
+                    </div>
+                })}
             </div>
+            <Footer />
         </section>
     );
 }
