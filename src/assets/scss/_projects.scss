@@ -1,5 +1,4 @@
 .projects {
-  // height: 100vh;
   background-color: #555;
   background-image: url('./../img/background/projects.png');
   background-attachment: fixed;
@@ -13,14 +12,35 @@
     position: relative;
     width: 90%;
     margin: 2vh 5%;
-    // display: flex;
-    // flex-direction: column;
     text-align: center;
+    transition-duration: .4s;
+
+    &.fade {
+      opacity: 0;
+    }
 
     img {
-      width: 100%;
-      height: 50vh;
+      width: 80vmax;
+      height: 40vmax;
       border-radius: 4px;
+    }
+
+    .change-time-info {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 0;
+      top: -10%;
+      color: $primaryColor;
+      font-family: $supportFont;
+      background-color: $blackColor;
+      padding: 4vmax;
+      border-radius: 50%;
+      font-size: 150%;
+      width: 5%;
+      height: 5%;
+      border: 2px solid $primaryColor;
     }
 
     .img-layer {
@@ -29,8 +49,9 @@
       top: 0;
       left: 0;
       right: 0;
-      width: 100%;
-      height: 100%;
+      margin: 0 auto;
+      width: 80vmax;
+      height: 40vmax;
       background-color: $darkColor;
       transition-duration: .4s;
       color: $bgColor;
@@ -38,9 +59,16 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 200%;
+      font-size: 3vmin;
       text-align: center;
       text-align-last: center;
+
+      .project-name {
+        font-size: 250%;
+        color: $bgColor;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
 
       span {
         width: 80%;
@@ -74,26 +102,24 @@
 
   }
 
-  .project-name {
-    font-size: 250%;
-    color: $bgColor;
-    text-align: center;
-  }
-
   &__carussel {
+    position: relative;
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 2vh;
-    width: 180%;
-    transform: translateX(-40vw);
+    width: 100%;
+    padding-bottom: 15%;
 
     .project-miniature {
       text-align: center;
+      width: 25%;
+      margin: 0 2%;
 
       img {
-        width: 25vw;
-        height: 15vh;
+        width: 100%;
+        height: 30vmin;
         transition-duration: .4s;
         outline: 2px solid transparent;
         outline-offset: 5px;
@@ -108,7 +134,65 @@
       &.active img {
         outline: 2px solid $primaryColor;
       }
-
     }
+
+    .arrow-left {
+      height: 50%;
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 2%;
+      z-index: 20;
+
+      i {
+        color: $bgColor;
+        font-size: 10vmin;
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .projects {
+
+    .change-time-info {
+      padding: 4vmin;
+    }
+
+    &__large-project {
+      img {
+        width: 80vmin;
+        height: 40vmin;
+      }
+
+      .img-layer {
+        width: 80vmin;
+        height: 40vmin;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .projects {
+
+    .change-time-info {
+      font-size: 250%;
+    }
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects {
+
+    .change-time-info {
+      padding: 2vmax;
+      right: 2%;
+      top: -5%;
+    }
+
   }
 }

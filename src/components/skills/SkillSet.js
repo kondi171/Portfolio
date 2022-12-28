@@ -1,80 +1,13 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../flow/AppContext';
 import ExpandedSkill from './ExpandedSkill';
 import Skill from './Skill';
-import HTML from "../../assets/img/stack/HTML.png";
-import CSS from "../../assets/img/stack/CSS.png";
-import JS from "../../assets/img/stack/JS.png";
-import React from "../../assets/img/stack/React.png";
-import SASS from "../../assets/img/stack/SASS.png";
-import Node from "../../assets/img/stack/Node.png";
-import MongoDB from "../../assets/img/stack/MongoDB.png";
-import Git from "../../assets/img/stack/Git.png";
-import Bootstrap from "../../assets/img/stack/Bootstrap.png";
-import MySQL from "../../assets/img/stack/MySQL.png";
-import PHP from "../../assets/img/stack/PHP.png";
-import CPP from "../../assets/img/stack/CPP.png";
-import Java from "../../assets/img/stack/Java.png";
-import { useEffect } from 'react';
 
-const SkillSet = () => {
+const SkillSet = ({ skillsImages }) => {
 
   const { skillsData } = useContext(AppContext);
   const [expandedSkillId, setExpandedSkillId] = useState(0);
-  const skillImages = [
-    {
-      title: 'HTML',
-      source: HTML
-    },
-    {
-      title: 'CSS',
-      source: CSS
-    },
-    {
-      title: 'JavaScript',
-      source: JS
-    },
-    {
-      title: 'React.js',
-      source: React
-    },
-    {
-      title: 'SASS/SCSS',
-      source: SASS
-    },
-    {
-      title: 'Node.js',
-      source: Node
-    },
-    {
-      title: 'MongoDB',
-      source: MongoDB
-    },
-    {
-      title: 'Git',
-      source: Git
-    },
-    {
-      title: 'Bootstrap',
-      source: Bootstrap
-    },
-    {
-      title: 'MySQL',
-      source: MySQL
-    },
-    {
-      title: 'PHP',
-      source: PHP
-    },
-    {
-      title: 'C/C++',
-      source: CPP
-    },
-    {
-      title: 'Java',
-      source: Java
-    },
-  ];
+
   useEffect(() => {
     const skillVisibility = document.querySelector('.visibility');
     if (expandedSkillId === 0) {
@@ -91,11 +24,11 @@ const SkillSet = () => {
       <div className="skills-wrapper">
         {Object.keys(skillsData).length !== 0 && skillsData.skills.map((skill, index) => {
           const { id, title, sizing, description } = skill;
-          return <Skill id={id} key={title} img={skillImages[index].source} title={title} sizing={sizing} description={description} setExpandedSkillId={setExpandedSkillId} />
+          return <Skill id={id} key={title} img={skillsImages[index].source} title={title} sizing={sizing} description={description} setExpandedSkillId={setExpandedSkillId} />
         })}
       </div>
       <div className="visibility">
-        {expandedSkillId && <ExpandedSkill setExpandedSkillId={setExpandedSkillId} skillData={skillsData.skills[expandedSkillId]} skillImages={skillImages} />}
+        {expandedSkillId && <ExpandedSkill setExpandedSkillId={setExpandedSkillId} skillData={skillsData.skills[expandedSkillId]} skillImages={skillsImages} />}
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ const Nav = () => {
             <Progress />
             <Settings />
             <Caricature />
-            <Menu />
+            {/* <Menu /> */}
         </animated.nav>
     );
 }

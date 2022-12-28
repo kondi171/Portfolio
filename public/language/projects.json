@@ -1,6 +1,7 @@
 {
   "eng": {
     "title": "Projects",
+    "button": "Open project",
     "projects": [
       {
         "id": "BlockBall",
@@ -16,7 +17,7 @@
           },
           {
             "title": "Control keys",
-            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Game:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
           },
           {
             "title": "Documentation",
@@ -38,11 +39,11 @@
           "title": "Authors",
           "authors": [
             {
-              "name": "@kondi171",
+              "name": "@kondi171 - Konrad Nowak",
               "link": "https://github.com/kondi171"
             },
             {
-              "name": "@kwypych4",
+              "name": "@kwypych4 - Kamil Wypych",
               "link": "https://github.com/kwypych4"
             }
           ]
@@ -53,11 +54,6 @@
             {
               "icon": "github",
               "content": "Visit repository on github",
-              "url": "https://github.com/kondi171/BlockBall"
-            },
-            {
-              "icon": "link",
-              "content": "Visit website",
               "url": "https://github.com/kondi171/BlockBall"
             }
           ]
@@ -85,7 +81,7 @@
           },
           {
             "title": "How to run?",
-            "content": "First of all install a Java Runtime Environment (JRE) or Java Development Kit (JDK) in version above or equal 12! After that run Panzers 1916®.jar file. <br/>Download:<a href='https://www.java.com/pl/download/manual.jsp'>Java Runtime Environment</a><a href='https://www.oracle.com/pl/java/technologies/downloads'>Java Development Kit </a><br/><strong>ATTENTION!</strong> Full screen does not work on some screens! Epilepsy warning!"
+            "content": "First of all install a Java Runtime Environment (JRE) or Java Development Kit (JDK) in version above or equal 12! After that run Panzers 1916®.jar file. <br /><br />Download: <br /><br /><a href='https://www.java.com/pl/download/manual.jsp'>Java Runtime Environment</a> <br/> <a href='https://www.oracle.com/pl/java/technologies/downloads'>JavaDevelopment Kit </a><br/><strong>ATTENTION!</strong> Full screen does not work on some screens! Epilepsy warning!"
           }
         ],
         "techStack": {
@@ -100,11 +96,11 @@
           "title": "Authors",
           "authors": [
             {
-              "name": "@kondi171",
+              "name": "@kondi171 - Konrad Nowak",
               "link": "https://github.com/kondi171"
             },
             {
-              "name": "@kwypych4",
+              "name": "@kwypych4 - Kamil Wypych",
               "link": "https://github.com/kwypych4"
             }
           ]
@@ -115,11 +111,6 @@
             {
               "icon": "github",
               "content": "Visit repository on github",
-              "url": "https://github.com/kondi171/Panzers1916"
-            },
-            {
-              "icon": "link",
-              "content": "Visit website",
               "url": "https://github.com/kondi171/Panzers1916"
             }
           ]
@@ -159,7 +150,7 @@
           "title": "Authors",
           "authors": [
             {
-              "name": "@kondi171",
+              "name": "@kondi171 - Konrad Nowak",
               "link": "https://github.com/kondi171"
             }
           ]
@@ -186,42 +177,29 @@
         "representation": [
           {
             "title": "Description",
-            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+            "content": "Website made commisioned by consumer for advertising his services in the field of massages. Website was implemented in two versions. One of them is with own mailing system implemented in PHP and the second one is with external mailing system - <strong>formspree.io</strong> which integrate mail with website form."
           },
           {
-            "title": "Game Rules",
-            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
-          },
-          {
-            "title": "Control keys",
-            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
-          },
-          {
-            "title": "Documentation",
-            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
-          },
-          {
-            "title": "Installation",
-            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+            "title": "How to run?",
+            "content": "To run website with <strong>formspree.io</strong> mailing system - Visit deployment: <a href='https://czas-na-masaz.netlify.app'>czas-na-masaz.netlify.app</a>To run website with own mailing system:<li>Download localhost server hosting like <strong>XAMPP</strong> and run <strong>Apache server</strong> and <strong> MySQL</strong></li><li>Create in <strong>phpMyAdmin</strong> database <i>czasnamasaz</i>, next import to this database <i>czasnamasaz.sql</i> file which is in <strong>db</strong>  folder. File contains structure of tables </li><li>Go  to <i>_phpVersion</i> folder and paste content to main folder replacing <i>index.html</i> to <i>index.php</i></li><li>All project paste to <strong>htdocs</strong> folder in <strong>xampp</strong> folder </li><li>Db is empty if you want to login type <strong>localhost/php/adminlog.php</strong>, before it create login and password in <i>phpMyAdmin</i> in <i>admin</i> table</li><strong>IMPORTANT!</strong> Website is no more used by consumer, all website is under development."
           }
         ],
         "techStack": {
           "title": "Tech Stack",
           "stack": [
-            "C++",
-            "Allegro"
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "MySQL"
           ]
         },
         "authors": {
           "title": "Authors",
           "authors": [
             {
-              "name": "@kondi171",
+              "name": "@kondi171 - Konrad Nowak",
               "link": "https://github.com/kondi171"
-            },
-            {
-              "name": "@kwypych4",
-              "link": "https://github.com/kwypych4"
             }
           ]
         },
@@ -231,12 +209,12 @@
             {
               "icon": "github",
               "content": "Visit repository on github",
-              "url": "https://github.com/kondi171/BlockBall"
+              "url": "https://github.com/kondi171/CzasNaMasaz"
             },
             {
               "icon": "link",
               "content": "Visit website",
-              "url": "https://github.com/kondi171/BlockBall"
+              "url": "https://czas-na-masaz.netlify.app"
             }
           ]
         }
@@ -247,42 +225,41 @@
         "representation": [
           {
             "title": "Description",
-            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+            "content": "An engineering application as an intermediary system between restaurant and customer. System enabling ordering meals online. Customer system is supported by Artificial Intelligence, which will recommend gastronomic meals based on collected data. System was implemented on JavaScript engine supported by React.js framework for visual layer and business logic. Storage and segregation are supported by no-relational database - MongoDB. Implementation of backend is based on Node.js framework which support Javascript syntax."
           },
           {
-            "title": "Game Rules",
-            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
-          },
-          {
-            "title": "Control keys",
-            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+            "title": "Artificial Neural Network",
+            "content": "The client system was supported by the implementation of the Artificial Neural Network - Long Short Term Memory (LSTM),. It is a recursive type of neural network, which, unlike standard neural networks, has the possibility of feedback. The main advantage of this type of network is the ability to process both single data and sequences, including character strings, which are transferred to the training data, on the basis of which the result is predicted."
           },
           {
             "title": "Documentation",
-            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
+            "content": "Documentation is an integral part of the engineering work protected by copyright. Documentation will be available only for individual request."
           },
           {
-            "title": "Installation",
-            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+            "title": "How to run?",
+            "content": "Visit deployment: <a href='https://lazytaste-frontend.onrender.com'> LazyTaste</a></br>API: </br><a href='https://lazytaste-backend.onrender.com/API/opinions'>Opinions database </a><a href='https://lazytaste-backend.onrender.com/API/customers'>Customers database </a><a href='https://lazytaste-backend.onrender.com/API/restaurants'>Restaurants database </a><a href='https://lazytaste-backend.onrender.com/API/lazy-assistant'> Lazy Assistant database</a> <strong>IMPORTANT!</strong> Due to the free hosting package, the speed of data exchange between frontend and backend is poor, patience is recommended :)"
           }
         ],
         "techStack": {
           "title": "Tech Stack",
           "stack": [
-            "C++",
-            "Allegro"
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Mongoose",
+            "Brain.js"
           ]
         },
         "authors": {
           "title": "Authors",
           "authors": [
             {
-              "name": "@kondi171",
+              "name": "@kondi171 - Konrad Nowak",
               "link": "https://github.com/kondi171"
-            },
-            {
-              "name": "@kwypych4",
-              "link": "https://github.com/kwypych4"
             }
           ]
         },
@@ -292,12 +269,12 @@
             {
               "icon": "github",
               "content": "Visit repository on github",
-              "url": "https://github.com/kondi171/BlockBall"
+              "url": "https://github.com/kondi171/LazyTaste"
             },
             {
               "icon": "link",
               "content": "Visit website",
-              "url": "https://github.com/kondi171/BlockBall"
+              "url": "https://lazytaste-frontend.onrender.com"
             }
           ]
         }
@@ -306,6 +283,7 @@
   },
   "pl": {
     "title": "Projekty",
+    "button": "Otwórz projekt",
     "projects": [
       {
         "id": "BlockBall",
@@ -321,7 +299,7 @@
           },
           {
             "title": "Sterowanie",
-            "content": "<ol><li>Menu:<ul><li>Strzałka w górę - przesuń kursor w górę</li><li>Strzałka w dół - przesuń kursow w dół</li><li>Enter - Zatwierdź</li></ul></li><li>Gracz pierwszy:<ul><li> Strzałka w górę - wypuść piłkę</li><li> Strzałka w lewo - przesuń paletkę w lewo</li><li> Strzałka w prawo - przesuń paletkę w prawo</li></ul></li><li>Gracz drugi:<ul><li>S - wypuść piłkę </li><li>A - przesuń paletkę w lewo </li><li>D - przesuń paletkę w prawo </li></ul></li><li>Pause:<ul><li>Escape - włącz pauzę</li><li>Spacja - kontynuuj grę</li><li>Enter - wyjdź z gry</li></ul></li><li>Pauza:<ul><li>O - załaduj poprzedni stan gry </li><li>P - zapisz stan gry </li></ul></li></ol>"
+            "content": "<ol><li>Menu:<ul><li>Strzałka w górę - przesuń kursor w górę</li><li>Strzałka w dół - przesuń kursor w dół</li><li>Enter - Zatwierdź</li></ul></li><li>Gracz pierwszy:<ul><li> Strzałka w górę - wypuść piłkę</li><li> Strzałka w lewo - przesuń paletkę w lewo</li><li> Strzałka w prawo - przesuń paletkę w prawo</li></ul></li><li>Gracz drugi:<ul><li>S - wypuść piłkę </li><li>A - przesuń paletkę w lewo </li><li>D - przesuń paletkę w prawo </li></ul></li><li>Pauza:<ul><li>Escape - włącz pauzę</li><li>Spacja - kontynuuj grę</li><li>Enter - wyjdź z gry</li></ul></li><li>Gra:<ul><li>O - załaduj poprzedni stan gry </li><li>P - zapisz stan gry </li></ul></li></ol>"
           },
           {
             "title": "Dokumentacja",
@@ -340,14 +318,14 @@
           ]
         },
         "authors": {
-          "title": "Authors",
+          "title": "Autorzy",
           "authors": [
             {
-              "name": "@kondi171",
+              "name": "@kondi171 - Konrad Nowak",
               "link": "https://github.com/kondi171"
             },
             {
-              "name": "@kwypych4",
+              "name": "@kwypych4 - Kamil Wypych",
               "link": "https://github.com/kwypych4"
             }
           ]
@@ -358,11 +336,6 @@
             {
               "icon": "github",
               "content": "Odwiedź repozytorium na Githubie",
-              "url": "https://github.com/kondi171/BlockBall"
-            },
-            {
-              "icon": "link",
-              "content": "Odwiedź stronę",
               "url": "https://github.com/kondi171/BlockBall"
             }
           ]
@@ -513,8 +486,11 @@
         "techStack": {
           "title": "Tech Stack",
           "stack": [
-            "C++",
-            "Allegro"
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "MySQL"
           ]
         },
         "authors": {
@@ -574,8 +550,15 @@
         "techStack": {
           "title": "Tech Stack",
           "stack": [
-            "C++",
-            "Allegro"
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Mongoose",
+            "Brain.js"
           ]
         },
         "authors": {
@@ -584,10 +567,6 @@
             {
               "name": "@kondi171",
               "link": "https://github.com/kondi171"
-            },
-            {
-              "name": "@kwypych4",
-              "link": "https://github.com/kwypych4"
             }
           ]
         },

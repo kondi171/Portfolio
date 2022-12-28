@@ -10,6 +10,7 @@ const AppProvider = ({ children }) => {
   const [projectsData, setProjectsData] = useState({});
   const [footerData, setFooterData] = useState({});
   const [theme, setTheme] = useState('Lambda');
+  const [projectPageAccessibility, setProjectPageAccessibility] = useState(false);
   return (
     <AppContext.Provider
       value={{
@@ -24,7 +25,9 @@ const AppProvider = ({ children }) => {
         footerData,
         setFooterData,
         theme,
-        setTheme
+        setTheme,
+        projectPageAccessibility,
+        setProjectPageAccessibility
       }}>
       {children}
     </AppContext.Provider>

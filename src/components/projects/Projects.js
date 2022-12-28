@@ -2,79 +2,22 @@ import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../flow/AppContext';
 
-import BlockBall_01 from './../../assets/img/projects/BlockBall/BlockBall_01.png';
-import BlockBall_02 from './../../assets/img/projects/BlockBall/BlockBall_02.png';
-import BlockBall_03 from './../../assets/img/projects/BlockBall/BlockBall_03.png';
-
-import Panzers1916_01 from './../../assets/img/projects/Panzers1916/Panzers1916_01.png';
-import Panzers1916_02 from './../../assets/img/projects/Panzers1916/Panzers1916_02.png';
-import Panzers1916_03 from './../../assets/img/projects/Panzers1916/Panzers1916_03.png';
-
-import MultiLines_01 from './../../assets/img/projects/MultiLines/MultiLines_01.png';
-import MultiLines_02 from './../../assets/img/projects/MultiLines/MultiLines_02.png';
-import MultiLines_03 from './../../assets/img/projects/MultiLines/MultiLines_03.png';
-
-import CzasNaMasaz_01 from './../../assets/img/projects/CzasNaMasaz/CzasNaMasaz_01.png';
-import CzasNaMasaz_02 from './../../assets/img/projects/CzasNaMasaz/CzasNaMasaz_02.png';
-import CzasNaMasaz_03 from './../../assets/img/projects/CzasNaMasaz/CzasNaMasaz_03.png';
-
-import LazyTaste_01 from './../../assets/img/projects/LazyTaste/LazyTaste_01.png';
-import LazyTaste_02 from './../../assets/img/projects/LazyTaste/LazyTaste_02.png';
-import LazyTaste_03 from './../../assets/img/projects/LazyTaste/LazyTaste_03.png';
-
-const Projects = () => {
+const Projects = ({ projectsImages }) => {
+    const constantTime = 9;
     const { projectsData } = useContext(AppContext);
-    const projectsImages = [
-        {
-            id: 'BlockBall',
-            img: [
-                BlockBall_01,
-                BlockBall_02,
-                BlockBall_03
-            ]
-        },
-        {
-            id: 'Panzers1916',
-            img: [
-                Panzers1916_01,
-                Panzers1916_02,
-                Panzers1916_03
-            ]
-        },
-        {
-            id: 'MultiLines',
-            img: [
-                MultiLines_01,
-                MultiLines_02,
-                MultiLines_03
-            ]
-        },
-        {
-            id: 'CzasNaMasaz',
-            img: [
-                CzasNaMasaz_01,
-                CzasNaMasaz_02,
-                CzasNaMasaz_03
-            ]
-        },
-        {
-            id: 'LazyTaste',
-            img: [
-                LazyTaste_01,
-                LazyTaste_02,
-                LazyTaste_03
-            ]
-        }
-    ];
-    const navigate = useNavigate();
-    const [activePhoto, setActivePhoto] = useState(0);
-    const [activeProject, setActiveProject] = useState({
-        id: "BlockBall",
-        name: "Block Ball",
-        content: "Desktop Application implemented in C++ with Allegro 5 Library.",
-        images: projectsImages[0].img[0]
-    });
 
+    const navigate = useNavigate();
+    const [activeProjectChanged, setActiveProjectChanged] = useState(false);
+    const [activePhoto, setActivePhoto] = useState(0);
+    const [activeProject, setActiveProject] = useState({});
+    const [timeToChange, setTimeToChange] = useState(constantTime);
+    const [cleanUpTimeOuts, setCleanUpTimeOuts] = useState({
+        fadeTimeout: null,
+        unfadeTimeout: null,
+        transitionTimeout: null,
+        translateLeftInterval: null,
+        translateRightInterval: null
+    });
 
     const handleActiveMiniature = e => {
         const carusselImgs = document.querySelectorAll('.project-miniature');
@@ -84,45 +27,103 @@ const Projects = () => {
         const content = e.target.parentNode.dataset.content;
         const activeMiniature = e.target.parentNode;
         activeMiniature.classList.add('active');
-
-        // const activeImages = projectsImages.filter(projectImages => console.log(projectImages));
         const selectActiveImagesObject = projectsImages.filter(activeImagesObject => activeImagesObject.id === id);
         const activeImages = selectActiveImagesObject.map(activeImages => activeImages.img);
         setActiveProject({
             id: id,
             name: name,
             content: content,
-            images: activeImages
+            images: activeImages[0]
         });
+        setActiveProjectChanged(true);
     }
 
+    const translateLeft = () => {
+        let counter = 0;
+        const carussel = document.querySelectorAll('.project-miniature');
+        setInterval(() => {
+            counter += 10;
+            carussel.forEach(project => {
+                project.style.transitionDuration = '.5s';
+                project.style.transform = `translateX(${counter}px)`;
+
+            });
+        }, 100);
+        // console.log("enter");
+        // setCleanUpTimeOuts(...cleanUpTimeOuts, { translateLeftInterval: leftTranslateInterval });
+    }
+    const stopTranslateLeft = () => {
+        clearInterval(cleanUpTimeOuts.translateLeftInterval);
+        console.log("left");
+
+    }
     useEffect(() => {
-        setTimeout(() => {
+        if (Object.keys(projectsData).length !== 0 && !activeProjectChanged) {
+            setActiveProject({
+                id: "BlockBall",
+                name: "Block Ball",
+                content: projectsData.projects[0].representation[0].content,
+                images: [...projectsImages[0].img]
+            });
+        }
+    }, [projectsData]);
+
+
+    useEffect(() => {
+        const review = document.querySelector('.projects__large-project');
+        const transitionDuration = parseFloat(getComputedStyle(review).transitionDuration) * 1000;
+        const unfadeTimeout = setTimeout(() => {
+            review.classList.add('fade');
+        }, constantTime * 1000 - transitionDuration);
+        const fadeTimeout = setTimeout(() => {
             if (activePhoto === 2) setActivePhoto(0);
             else setActivePhoto(activePhoto + 1);
-        }, 5000);
+        }, constantTime * 1000);
+        const transitionTimeout = setTimeout(() => {
+            review.classList.remove('fade');
+        }, constantTime * 1000 + transitionDuration);
+        setCleanUpTimeOuts({
+            fadeTimeout: fadeTimeout,
+            unfadeTimeout: unfadeTimeout,
+            transitionTimeout: transitionTimeout
+        });
     }, [activePhoto]);
 
     useEffect(() => {
-        console.log(activeProject.images);
+        const changeTimeout = setTimeout(() => {
+            if (timeToChange === 1) setTimeToChange(constantTime);
+            else setTimeToChange(timeToChange - 1);
+        }, 1000);
+        return () => clearTimeout(changeTimeout);
+    }, [timeToChange]);
+
+    useEffect(() => {
+        return () => {
+            clearInterval(cleanUpTimeOuts.fadeTimeout);
+            clearInterval(cleanUpTimeOuts.unfadeTimeout);
+            clearInterval(cleanUpTimeOuts.transitionTimeout);
+        }
     }, []);
 
     return (
         <section id="projects" className="projects">
             <h2>{projectsData?.title}</h2>
             <div className="projects__large-project">
-                <img src={activeProject.images[0][activePhoto]} alt={`${activeProject.name} project`} />
+                {Object.keys(activeProject).length !== 0 &&
+                    <img src={activeProject?.images[activePhoto]} alt={`${activeProject?.name} project`} />}
                 <div className="img-layer">
+                    <h3 className='project-name'>{activeProject.name}</h3>
                     <span>{activeProject.content}</span>
-                    <button onClick={() => navigate(`/project/${activeProject.id}`, { id: activeProject.id })} className="project-btn">Otwórz projekt</button>
+                    <button onClick={() => navigate(`/project/${activeProject.id}`, { state: { id: activeProject.id, images: projectsImages } })} className="project-btn">{projectsData?.button}</button>
                 </div>
+                <span className='change-time-info'>{timeToChange}</span>
             </div>
-            <h3 className='project-name'>{activeProject.name}</h3>
             <div className="projects__carussel">
                 {projectsData?.projects?.map((miniature, index) => {
                     const { id, name, representation } = miniature;
                     return <div key={id} data-id={id} data-name={name} data-content={representation[0].content} onClick={e => handleActiveMiniature(e)} className="project-miniature">
                         <img src={projectsImages[index].img[0]} alt={`Miniature of ${name} project`} />
+                        {/* <h4>{name}</h4> */}
                     </div>
                 })}
             </div>
