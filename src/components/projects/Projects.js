@@ -4,13 +4,15 @@ import { AppContext } from '../flow/AppContext';
 
 const Projects = ({ projectsImages }) => {
     const constantTime = 9;
-    const { projectsData } = useContext(AppContext);
+    const { projectsData, setIsThemeChanged } = useContext(AppContext);
 
     const navigate = useNavigate();
     const [activeProjectChanged, setActiveProjectChanged] = useState(false);
     const [activePhoto, setActivePhoto] = useState(0);
     const [activeProject, setActiveProject] = useState({});
     const [timeToChange, setTimeToChange] = useState(constantTime);
+    const [translateXAxisValue, setTranslateXAxisValue] = useState(0);
+    const [desktopLayout, setDesktopLayout] = useState(false);
     const [cleanUpTimeOuts, setCleanUpTimeOuts] = useState({
         fadeTimeout: null,
         unfadeTimeout: null,
@@ -18,7 +20,13 @@ const Projects = ({ projectsImages }) => {
         translateLeftInterval: null,
         translateRightInterval: null
     });
-
+    const checkPageWidth = () => {
+        const body = document.body;
+        const html = document.documentElement;
+        const width = Math.max(body.getBoundingClientRect().width, html.getBoundingClientRect().width);
+        if (width >= 1024) setDesktopLayout(true);
+        else setDesktopLayout(false);
+    }
     const handleActiveMiniature = e => {
         const carusselImgs = document.querySelectorAll('.project-miniature');
         carusselImgs.forEach(img => img.classList.remove('active'));
@@ -39,31 +47,39 @@ const Projects = ({ projectsImages }) => {
     }
 
     const translateLeft = () => {
-        let counter = 0;
-        const carussel = document.querySelectorAll('.project-miniature');
-        setInterval(() => {
-            counter += 10;
-            carussel.forEach(project => {
-                project.style.transitionDuration = '.5s';
-                project.style.transform = `translateX(${counter}px)`;
-
-            });
-        }, 100);
-        // console.log("enter");
-        // setCleanUpTimeOuts(...cleanUpTimeOuts, { translateLeftInterval: leftTranslateInterval });
+        const rightArrow = document.querySelector('.fa-angle-double-right');
+        const leftArrow = document.querySelector('.fa-angle-double-left');
+        rightArrow.classList.remove('inactive');
+        if (translateXAxisValue >= 0) return;
+        if (translateXAxisValue === -25) leftArrow.classList.add('inactive');
+        setTranslateXAxisValue(translateXAxisValue + 25);
     }
-    const stopTranslateLeft = () => {
-        clearInterval(cleanUpTimeOuts.translateLeftInterval);
-        console.log("left");
-
+    const translateRight = () => {
+        const rightArrow = document.querySelector('.fa-angle-double-right');
+        const leftArrow = document.querySelector('.fa-angle-double-left');
+        leftArrow.classList.remove('inactive')
+        const maxRightTranslate = (projectsData.projects.length - 3) * -25;
+        if (translateXAxisValue <= maxRightTranslate) return;
+        if (translateXAxisValue === maxRightTranslate + 25) rightArrow.classList.add('inactive');
+        setTranslateXAxisValue(translateXAxisValue - 25);
+    }
+    const redirectToProject = () => {
+        navigate(`/project/${activeProject.id}`, { state: { id: activeProject.id, images: projectsImages } });
+        setIsThemeChanged(false);
     }
     useEffect(() => {
+        const carussel = document.querySelector('.carussel__content');
+        carussel.style.transform = `translateX(${translateXAxisValue}%)`;
+    }, [translateXAxisValue]);
+
+    useEffect(() => {
+        checkPageWidth();
         if (Object.keys(projectsData).length !== 0 && !activeProjectChanged) {
             setActiveProject({
-                id: "BlockBall",
-                name: "Block Ball",
-                content: projectsData.projects[0].representation[0].content,
-                images: [...projectsImages[0].img]
+                id: "LazyTaste",
+                name: "Lazy Taste",
+                content: projectsData.projects[4].representation[0].content,
+                images: [...projectsImages[4].img]
             });
         }
     }, [projectsData]);
@@ -108,24 +124,34 @@ const Projects = ({ projectsImages }) => {
     return (
         <section id="projects" className="projects">
             <h2>{projectsData?.title}</h2>
-            <div className="projects__large-project">
-                {Object.keys(activeProject).length !== 0 &&
-                    <img src={activeProject?.images[activePhoto]} alt={`${activeProject?.name} project`} />}
-                <div className="img-layer">
-                    <h3 className='project-name'>{activeProject.name}</h3>
-                    <span>{activeProject.content}</span>
-                    <button onClick={() => navigate(`/project/${activeProject.id}`, { state: { id: activeProject.id, images: projectsImages } })} className="project-btn">{projectsData?.button}</button>
-                </div>
-                <span className='change-time-info'>{timeToChange}</span>
-            </div>
-            <div className="projects__carussel">
-                {projectsData?.projects?.map((miniature, index) => {
-                    const { id, name, representation } = miniature;
-                    return <div key={id} data-id={id} data-name={name} data-content={representation[0].content} onClick={e => handleActiveMiniature(e)} className="project-miniature">
-                        <img src={projectsImages[index].img[0]} alt={`Miniature of ${name} project`} />
-                        {/* <h4>{name}</h4> */}
+            <div className="desktop-layout">
+                <div className="projects__large-project">
+                    {Object.keys(activeProject).length !== 0 &&
+                        <img src={activeProject?.images[activePhoto]} alt={`${activeProject?.name} project`} />}
+                    <div className="img-layer">
+                        <h3 className='project-name'>{activeProject.name}</h3>
+                        <span>{Object.keys(activeProject).length !== 0 && `${activeProject?.content.slice(0, 150)}...`}</span>
+                        <button onClick={redirectToProject} className="project-btn">{projectsData?.button}</button>
                     </div>
-                })}
+                    <span className='change-time-info'>{timeToChange}</span>
+                </div>
+                <div className="projects__carussel">
+                    {!desktopLayout && <i className="fa fa-angle-double-left inactive" onClick={translateLeft} aria-hidden="true"></i>}
+                    <div className="carussel__content">
+                        {projectsData?.projects?.map((miniature, index) => {
+                            const { id, name, representation } = miniature;
+                            if (index === 4) return <div key={id} data-id={id} data-name={name} data-content={representation[0].content} onClick={e => handleActiveMiniature(e)} className="project-miniature active">
+                                <img src={projectsImages[index].img[0]} alt={`Miniature of ${name} project`} />
+                                <h4>{name}</h4>
+                            </div>
+                            else return <div key={id} data-id={id} data-name={name} data-content={representation[0].content} onClick={e => handleActiveMiniature(e)} className="project-miniature">
+                                <img src={projectsImages[index].img[0]} alt={`Miniature of ${name} project`} />
+                                <h4>{name}</h4>
+                            </div>
+                        })}
+                    </div>
+                    {!desktopLayout && <i className="fa fa-angle-double-right" onClick={translateRight} aria-hidden="true"></i>}
+                </div>
             </div>
         </section>
     );

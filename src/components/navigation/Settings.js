@@ -3,10 +3,9 @@ import { useSpring, animated } from "react-spring";
 import { AppContext } from "../flow/AppContext";
 const Settings = () => {
 
-    const { navData, setNavData, setAboutData, setSkillsData, setProjectsData, setFooterData, theme, setTheme } = useContext(AppContext);
+    const { navData, setNavData, setAboutData, setSkillsData, setProjectsData, setFooterData, theme, setTheme, language, setLanguage, isThemeChanged } = useContext(AppContext);
 
     const [settingsOpen, setSettingsOpen] = useState(false);
-    const [language, setLanguage] = useState(true); // pl - true; eng - false
 
     const rotateCog = useSpring({
         loop: true,
@@ -60,7 +59,7 @@ const Settings = () => {
         setLanguage(!language);
         fetchData();
     }
-    const readyTheme = () => {
+    const readyTheme = (theme) => {
         const headerTitle = document.querySelector('.header__title');
         const headerAuthor = document.querySelector('.header__author');
 
@@ -134,28 +133,31 @@ const Settings = () => {
         if (footerIcons.length !== 0) {
             footerIcons.forEach(icon => icon.dataset.theme = theme);
         }
-    }
-    const handleChangeTheme = () => {
-        const newTheme = theme === 'Lambda' ? 'Abyss' : 'Lambda';
-        setTheme(newTheme);
-        readyTheme();
         const footer = document.getElementById('footer');
         footer.dataset.theme = theme;
-
         const skillHeader = document.querySelector('#skillSet h2');
         skillHeader.dataset.theme = theme;
-        // if (skills.length !== 0) {
-        //     skills.forEach(skill => {
-        //         
-        //         if (skill.firstChild.nextSibling !== null)
-        //             skill.firstChild.nextSibling.dataset.theme = theme;
+        const timer = document.querySelector('.change-time-info');
+        timer.dataset.theme = theme;
+        const layer = document.querySelector('.img-layer');
+        layer.dataset.theme = theme;
+        const layerBtn = document.querySelector('.project-btn');
+        layerBtn.dataset.theme = theme;
+        const carussel = document.querySelector('.carussel__content');
+        carussel.dataset.theme = theme;
+        const projectsMiniatures = document.querySelectorAll('.project-miniature img');
+        projectsMiniatures.forEach(projectMiniature => projectMiniature.dataset.theme = theme);
+        const projectsSection = document.getElementById('projects');
+        projectsSection.dataset.theme = theme;
+        const caricature = document.querySelector('.caricature');
+        caricature.dataset.theme = theme;
 
-        //         // if (skill.firstChild.nextSibling.nextSibling !== null)
-        //         //     skill.firstChild.nextSibling.nextSibling.dataset.theme = theme;
+    }
+    const handleChangeTheme = () => {
+        const newTheme = theme === 'Abyss' ? 'Lambda' : 'Abyss';
+        setTheme(newTheme);
+        readyTheme(newTheme);
 
-        //     });
-
-        // }
         // skills[0].dataset.theme = theme;
         // const times = document.querySelector('.fa.fa-times');
         // const bars = document.querySelector('.fa.fa-bars');
@@ -172,7 +174,8 @@ const Settings = () => {
     }, [language]);
 
     useEffect(() => {
-        handleChangeTheme();
+        if (isThemeChanged) handleChangeTheme();
+        else readyTheme(theme);
     }, []);
 
     return (
@@ -188,7 +191,7 @@ const Settings = () => {
                 <h4>{navData?.settings?.changeTheme}</h4>
                 <div onClick={handleChangeTheme} className="settings__btn">
                     <span>Abyss</span>
-                    {theme === "Lambda" ? <i className="fa fa-toggle-off" aria-hidden="true"></i> : <i className="fa fa-toggle-on" aria-hidden="true"></i>}
+                    {theme === "Lambda" ? <i className="fa fa-toggle-on" aria-hidden="true"></i> : <i className="fa fa-toggle-off" aria-hidden="true"></i>}
                     <span>Lambda</span>
                 </div>
             </div>

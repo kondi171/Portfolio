@@ -3,6 +3,18 @@
   background-image: url('./../img/background/projects.png');
   background-attachment: fixed;
 
+  &[data-theme='Lambda'] {
+    transition-duration: .4s;
+    background-blend-mode: luminosity;
+    background-color: transparent;
+  }
+
+  &[data-theme='Abyss'] {
+    transition-duration: .4s;
+    background-blend-mode: luminosity;
+    background-color: $supportColorAbyss;
+  }
+
   h2 {
     @extend %title;
     color: $bgColor;
@@ -41,6 +53,12 @@
       width: 5%;
       height: 5%;
       border: 2px solid $primaryColor;
+
+      &[data-theme='Abyss'] {
+        border-color: $primaryColorAbyss;
+        color: $primaryColorAbyss;
+      }
+
     }
 
     .img-layer {
@@ -51,7 +69,6 @@
       right: 0;
       margin: 0 auto;
       width: 80vmax;
-      height: 40vmax;
       background-color: $darkColor;
       transition-duration: .4s;
       color: $bgColor;
@@ -63,11 +80,16 @@
       text-align: center;
       text-align-last: center;
 
+      &[data-theme='Abyss'] {
+        color: $bgColor;
+        background-color: $blackColorAbyss;
+      }
+
       .project-name {
-        font-size: 250%;
+        font-size: 200%;
         color: $bgColor;
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 2vmin;
       }
 
       span {
@@ -78,15 +100,20 @@
         font-size: 100%;
         font-weight: bold;
         text-shadow: 0px 0px 50px $supportColor;
-        margin-top: 5vh;
+        margin-top: 2vmin;
         font-family: $supportFont;
         background-color: transparent;
         color: $supportColor;
         border-radius: 4px;
         outline: 2px solid $supportColor;
-        padding: 2vh;
+        padding: 2vmin;
         transition-duration: .4s;
         border: none;
+
+        &[data-theme='Abyss'] {
+          color: $supportColorAbyss;
+          text-shadow: 0px 0px 50px $supportColorAbyss;
+        }
 
         &:hover {
           cursor: pointer;
@@ -104,22 +131,71 @@
 
   &__carussel {
     position: relative;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 2vh;
-    width: 100%;
-    padding-bottom: 15%;
+
+    .carussel__content {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 7vmin;
+      width: 200%;
+      height: 50vmin;
+      opacity: .8;
+      transition-duration: .4s;
+      background-color: $blackColor;
+
+      &[data-theme='Abyss'] {
+        background-color: $blackColorAbyss;
+      }
+    }
+
+    .fa {
+      position: absolute;
+      top: 30%;
+      z-index: 2;
+      color: $bgColor;
+      margin: 0 2vmin;
+      font-size: 450%;
+      transition-duration: .4s;
+
+      &:hover {
+        cursor: pointer;
+        color: $primaryColor;
+        transform: scale(1.2);
+      }
+    }
+
+    .fa-angle-double-left {
+      left: 0;
+
+      &.inactive {
+        transform: scale(0);
+        color: $blackColor;
+      }
+    }
+
+    .fa-angle-double-right {
+      right: 0;
+
+      &.inactive {
+        transform: scale(0);
+        color: $blackColor;
+      }
+    }
 
     .project-miniature {
       text-align: center;
       width: 25%;
-      margin: 0 2%;
+      margin: 0 2.5%;
+
+      h4 {
+        font-size: 150%;
+        margin-top: 4vmin;
+        color: $bgColor;
+      }
 
       img {
         width: 100%;
-        height: 30vmin;
+        height: 20vmin;
         transition-duration: .4s;
         outline: 2px solid transparent;
         outline-offset: 5px;
@@ -128,27 +204,23 @@
         &:hover {
           cursor: pointer;
           outline: 2px solid $primaryColor;
+
+          &[data-theme='Abyss'] {
+            cursor: pointer;
+            outline: 2px solid $primaryColorAbyss;
+          }
         }
+
+
       }
+
 
       &.active img {
         outline: 2px solid $primaryColor;
-      }
-    }
 
-    .arrow-left {
-      height: 50%;
-      width: 10%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      left: 2%;
-      z-index: 20;
-
-      i {
-        color: $bgColor;
-        font-size: 10vmin;
+        &[data-theme='Abyss'] {
+          outline: 2px solid $primaryColorAbyss;
+        }
       }
     }
   }
@@ -175,24 +247,137 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
   .projects {
+    &__carussel {
+
+
+      .carussel__content {
+        height: 40vmin;
+      }
+
+      .fa {
+        top: 40%;
+
+      }
+
+      .project-miniature {
+        text-align: center;
+        width: 25%;
+        margin: 0 2.5%;
+
+        h4 {
+          font-size: 250%;
+        }
+      }
+    }
 
     .change-time-info {
       font-size: 250%;
     }
-
   }
 }
 
 @media (min-width: 1024px) {
   .projects {
-
-    .change-time-info {
-      padding: 2vmax;
-      right: 2%;
-      top: -5%;
+    h2 {
+      width: 80%;
+      height: 12vh;
     }
 
+    .desktop-layout {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20vh;
+
+      .projects__large-project {
+        width: 60%;
+        margin: 2vmin 5%;
+        text-align: center;
+        transition-duration: .4s;
+
+        img {
+          width: 100%;
+          height: 30vmax;
+        }
+
+        .change-time-info {
+          padding: 2vmax;
+          left: -2%;
+          top: -8%;
+        }
+
+        .img-layer {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .projects__carussel {
+        margin-top: -12vh;
+        width: 30%;
+
+        .carussel__content {
+          overflow-y: scroll;
+          position: absolute;
+          flex-direction: column;
+          justify-content: space-evenly;
+          width: 100%;
+          height: 90vh;
+          margin-top: 0;
+          z-index: 0;
+        }
+
+        .fa {
+          position: absolute;
+          top: 30%;
+          font-size: 450%;
+
+          &:hover {
+
+            transform: rotate(90deg);
+          }
+        }
+
+        .fa-angle-double-left {
+          left: 45%;
+          top: 2%;
+          transform: rotate(90deg);
+        }
+
+        .fa-angle-double-right {
+          right: 0;
+        }
+
+        .project-miniature {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          width: 50%;
+          margin: 0 2.5%;
+
+          &:first-of-type {
+            margin-top: 40vmax;
+          }
+
+          &:last-of-type {
+            margin-bottom: 10vmax;
+          }
+
+          h4 {
+            order: 1;
+            font-size: 250%;
+            margin: 2vmin;
+            // margin-top: 0;
+          }
+
+          img {
+            order: 2;
+            width: 100%;
+            height: 20vmin;
+          }
+        }
+      }
+    }
   }
 }

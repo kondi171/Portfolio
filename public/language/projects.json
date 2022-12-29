@@ -2,6 +2,11 @@
   "eng": {
     "title": "Projects",
     "button": "Open project",
+    "projectSectionController": [
+      "Previous project",
+      "Back to landing",
+      "Next project"
+    ],
     "projects": [
       {
         "id": "BlockBall",
@@ -284,6 +289,11 @@
   "pl": {
     "title": "Projekty",
     "button": "Otwórz projekt",
+    "projectSectionController": [
+      "Poprzedni projekt",
+      "Powrót do strony głównej",
+      "Następny projekt"
+    ],
     "projects": [
       {
         "id": "BlockBall",
@@ -346,28 +356,28 @@
         "name": "Panzers 1916",
         "representation": [
           {
-            "title": "Description",
-            "content": "A game based on Tank 1990 game released on pegasus. This project is a little bit different, because there is on co-operation, instead players fight each other."
+            "title": "Opis",
+            "content": "Gra wzorowana na klasycznej grze wydanej na Pegasusa - Tank 1990. Projekt ten różni się od pierwowzoru ponieważ nie ma w niej kooperacji, zamiast tego gracze prowadzą ze sobą rozgrywkę w trybie versus."
           },
           {
-            "title": "Game Rules",
-            "content": "The board has been divided into 26 x 13 tiles, excluding black border. Players and their bullets can only move around fixed grid. For each player was reserved part of screen where is stats are displayed screen where his stats and player name are displayed. There are 4 types of blocks on the Board:<ul><li> Brick - A static destructible unit that can be obtained for 100 points for each hit and destruction, </li><li> Stone - Static and indestructible unit, </li><li> Water - A unit that only bullets can pass through, </li><li> Empty - A block that players can move freely on. </li></ul>Due to the Grid template, the player can only move in 4 directions, no indirect route possible. After firing the maximum number of bullets allowed in a burst (set to two begins a shot restriction - on the board can be a maximum of two shoots per player, when player reach limit, the next time he can fire only when there is a bullet collisionand the bullets will disappear from the board. Each player has 3 lives, each life taken from the opponent awards 1000 points to the player who managed to hit the opponent,and takes the life of the unit hit. For every hit destructible bricks, the player gets 100 points, which diversify the game and decide which player was better in a givengame. Every tank can fire two bullets in one burst. When the life of one of the players reaches zero - the game is over."
+            "title": "Zasady Gry",
+            "content": "Plansza została podzielona na kafelki 26 x 13, wykluczając czarne obramowanie. gracze oraz ich pociski, mogą poruszać się jedynie po ustalonej siatce. Dla każdego gracza zostało przydzielone miejsce na ekranie gdzie wyświetlają się jego statystyki oraz nazwa gracza. Na Planszy znajdują się 4 rodzaje bloków:<ul><li>Cegła - Statyczna do zniszczenia jednostka za którą można dostać 100 punktów za każde jej trafienie i zniszczenie, </li><li>Kamień - Statyczna i niezniszczalna jednostka, </li><li>Woda - Jednostka przez którą może przelecieć pocisk, natomiast gracz już nie, </li><li>Pusta - Blok po którym gracze, mogą poruszać się swobodnie. </li></ul>Dzięki Siatkowemu szablonowi, gracz może poruszać się tylko w 4 kierunkach, brak możliwości drogi pośredniej. Po wystrzeleniu maksymalnej dozwolonej ilości pocisków w serii (ustawiona na 2), następuje ograniczenie strzału, na planszy mogą znajdować się maksymalnie 2 pociski jednego gracza,  gdy osiągniemy limit, następny raz będziemy mogli wystrzeli dopiero gdy nastąpi kolizja pocisku i pocisk zniknie z planszy"
           },
           {
-            "title": "Control keys",
-            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>W- go up</li><li>S - go down</li><li>A - go left</li><li>D - go right</li><li>Space - shoot</li></ul></li><li>Second Player:<ul><li> Up Arrow - go up</li><li> Down Arrow - go down</li><li> Left Arrow - go left</li><li> Right Arrow - go right</li><li> K - shoot</li></ul></li></ol>"
+            "title": "Sterowanie",
+            "content": "<ol><li>Menu:<ul><li> Strzałka w górę - poruszanie w górę</li><li> Strzałka w dół - poruszanie w dół</li><li>Enter - Zatwierdź</li></ul></li><li>Gracz pierwszy:<ul><li>W - poruszanie w górę</li><li>S - poruszanie w dół</li><li>A - poruszanie w lewo</li><li>D - poruszanie w prawo</li><li>Spacja - Strzał </li></ul></li><li>Gracz drugi:<ul><li>Strzałka w górę - poruszanie w górę</li><li>Strzałka w dół - poruszanie w dół</li><li>Strzałka w lewo - poruszanie w lewo</li><li>Strzałka w prawo - poruszanie w prawo</li><li>K - strzał</li></ul></li></ol>"
           },
           {
-            "title": "Documentation",
+            "title": "Dokumentacja",
             "content": "Whole documentation is in <strong>documentation</strong> folder after running <strong>index.html</strong> file."
           },
           {
-            "title": "How to run?",
-            "content": "First of all install a Java Runtime Environment (JRE) or Java Development Kit (JDK) in version above or equal 12! After that run Panzers 1916®.jar file. <br/>Download:<a href='https://www.java.com/pl/download/manual.jsp'>Java Runtime Environment</a><a href='https://www.oracle.com/pl/java/technologies/downloads'>Java Development Kit </a><br/><strong>ATTENTION!</strong> Full screen does not work on some screens! Epilepsy warning!"
+            "title": "Jak uruchomić?",
+            "content": "Najpierw należy zainstalować maszynę wirtualną Javy (JRE) lub zestaw narzędzi programistycznych dla języka Java (JDK) w wersji powyżej 12! Następnie należyuruchomić plik Panzers 1916®.jar <br/>Pobierz: </br><a href='https://www.java.com/pl/download/manual.jsp'>Java Runtime Environment</a><br/><a href='https://www.oracle.com/pl/java/technologies/downloads'>Java Development Kit </a><br/><strong>Uwaga!</strong> Pełny ekran nie funkcjonuje poprawnie na niektórych ekranach! Ostrzeżenie o epilepsji!"
           }
         ],
         "techStack": {
-          "title": "Tech Stack",
+          "title": "Stos Technologiczny",
           "stack": [
             "Java",
             "Swing",
@@ -375,7 +385,7 @@
           ]
         },
         "authors": {
-          "title": "Authors",
+          "title": "Autorzy",
           "authors": [
             {
               "name": "@kondi171",
@@ -388,16 +398,11 @@
           ]
         },
         "links": {
-          "title": "Visit",
+          "title": "Odwiedź",
           "links": [
             {
               "icon": "github",
-              "content": "Visit repository on github",
-              "url": "https://github.com/kondi171/Panzers1916"
-            },
-            {
-              "icon": "link",
-              "content": "Visit website",
+              "content": "Odwiedź repozytorium na Githubie",
               "url": "https://github.com/kondi171/Panzers1916"
             }
           ]
@@ -408,24 +413,24 @@
         "name": "Multi Lines",
         "representation": [
           {
-            "title": "Description",
-            "content": "Single Page Application implemented with React.js. Ready to use in local game. Multiplayer is not implemented yet."
+            "title": "Opis",
+            "content": "Aplikacja typu Single Page Application zaimplementowana w technologiach webowych. Gotowa do uruchomienia w trybie lokalnym. Tryb online nie został jeszcze zaimplementowany."
           },
           {
-            "title": "Game Rules",
-            "content": "Game is played in 5 rounds. Survive as long as you can, the longer you are on the board, the more points you get. Dodge walls, own trails and other players. Smash your enemies, blocking their way. The player with the most points wins. Winner take everything!"
+            "title": "Zasady Gry",
+            "content": "Gra rozgrywa się przez 5 rund. Przetrwaj tak długo jak potrafisz, im dłużej znajdujesz się na planszy tym więcej punktów dostajesz. Unikaj ścian oraz szlaków, zarówno własnych jak i przeciwników. Niszcz wrogów blokując im drogę. Gracz z największą ilością punktów wygrywa. Wygrywający bierze wszystko!"
           },
           {
-            "title": "Control keys",
-            "content": "<ol><li>Red player:<ul><li>W - go up</li><li>S - go down</li><li>A - go left</li><li>D - go right</li></ul></li><li>Green player:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Blue player:<ul><li>I - go up</li><li>K - go down</li><li>J - go left</li><li>L - go right</li></ul></li><li>Yellow player:<ul><li>Num8 - go up</li><li>Num5 - go down</li><li>Num4 - go left</li><li>Num6 - go right</li></ul></li></ol>"
+            "title": "Sterowanie",
+            "content": "<ol><li>Gracz Czerwony:<ul><li>W - poruszanie w górę</li><li>S - poruszanie w dół</li><li>A - poruszanie w lewo</li><li>D - poruszanie w prawo</li></ul></li><li>Gracz Zielony:<ul><li>Strzałka w górę - poruszanie w górę</li><li>Strzałka w dół - poruszanie w dół</li><li>Strzałka w lewo - poruszanie w lewo</li><li>Strzałka w prawo - poruszanie w prawo</li></ul></li><li>Gracz Niebieski:<ul><li>I - poruszanie w górę</li><li>K - poruszanie w dół</li><li>J - poruszanie w lewo</li><li>L - poruszanie w prawo</li></ul></li><li>Gracz Żółty:<ul><li>Num8 - poruszanie w górę</li><li>Num5 - poruszanie w dół</li><li>Num4 - poruszanie w lewo</li><li>Num6 - poruszanie w prawo</li></ul></li></ol>"
           },
           {
-            "title": "How to run?",
-            "content": "Visit deployment: <a href='https://multilines.netlify.app'>multilines.netlify.app</a> "
+            "title": "Jak uruchomić?",
+            "content": "Odwiedź witrynę: <a href='https://multilines.netlify.app'> multilines.netlify.app</a>"
           }
         ],
         "techStack": {
-          "title": "Tech Stack",
+          "title": "Stos Technologiczny",
           "stack": [
             "HTML",
             "SCSS",
@@ -434,7 +439,7 @@
           ]
         },
         "authors": {
-          "title": "Authors",
+          "title": "Autorzy",
           "authors": [
             {
               "name": "@kondi171",
@@ -443,16 +448,16 @@
           ]
         },
         "links": {
-          "title": "Visit",
+          "title": "Odwiedź",
           "links": [
             {
               "icon": "github",
-              "content": "Visit repository on github",
+              "content": "Odwiedź repozytorium na Githubie",
               "url": "https://github.com/kondi171/MultiLines"
             },
             {
               "icon": "link",
-              "content": "Visit website",
+              "content": "Odwiedź witrynę",
               "url": "https://multilines.netlify.app"
             }
           ]
@@ -463,28 +468,16 @@
         "name": "Czas Na Masaż",
         "representation": [
           {
-            "title": "Description",
-            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+            "title": "Opis",
+            "content": "Strona internetowa wykonana na zlecenie klienta do ogłaszania jego usług w zakresie wykonywania masaży. Witryna została zaimplementowana w dwóch wersjach. Pierwsza z nich ma zaimplementowany własny system mailingowy napisany w języku PHP, a drugi wariant ma zaimplementowany zewnętrzny sytem mailingowy - <strong>formspree.io</strong>, który integruje skrzynkę mailową z formularzem na stronie."
           },
           {
-            "title": "Game Rules",
-            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
-          },
-          {
-            "title": "Control keys",
-            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
-          },
-          {
-            "title": "Documentation",
-            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
-          },
-          {
-            "title": "Installation",
-            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+            "title": "Jak uruchomić?",
+            "content": "Aby uruchomić stronę internetową z systemem mailingowym <strong>formspree.io</strong> - odwiedź witrynę: <a href='https://czas-na-masaz.netlify.app'>czas-na-masaz.netlify.app</a> <br/>Aby uruchomić witryne z własnym systemem mailingowym należy:<li>Zainstalować hostujący serwer lokalny np. <strong>XAMPP</strong> i uruchomić w nim <strong>Apache server</strong> oraz <strong>MySQL</strong></li><li>Stworzyć w phpMyAdmin bazę danych o nazwie <i>czasnamasaz</i>, następnie zaimportować bazę danych z pliku <i>czasnamasaz.sql</i>, który znajduje się w folderze<strong>db</strong>. Plik ten zawiera struktury tabel</li><li>Otwórz folder <i>_phpVersion</i> skopiuj i wklej zawartość folderu do folderu głównego, zamieniając przy tym <i>index.html</i> na <i>index.php</i></li><li>Cały projekt wklej do folderu <strong>htdocs</strong> w folderze <strong>xampp</strong></li><li>Baza danych jest pusta, jeżeli chcesz się zalogować wpisz w URL: <strong>localhost/php/adminlog.php</strong>, przed tym jednak stwórz swój login i hasło w <i>phpMyAdmin</i> w tabeli <i>admin</i></li><strong>WAŻNE!</strong>Strona internetowa nie jest już używana przez klienta. Cała witryna jest na etapie developerskim."
           }
         ],
         "techStack": {
-          "title": "Tech Stack",
+          "title": "Stos Technologiczny",
           "stack": [
             "HTML",
             "CSS",
@@ -494,29 +487,25 @@
           ]
         },
         "authors": {
-          "title": "Authors",
+          "title": "Autorzy",
           "authors": [
             {
               "name": "@kondi171",
               "link": "https://github.com/kondi171"
-            },
-            {
-              "name": "@kwypych4",
-              "link": "https://github.com/kwypych4"
             }
           ]
         },
         "links": {
-          "title": "Visit",
+          "title": "Odwiedź",
           "links": [
             {
               "icon": "github",
-              "content": "Visit repository on github",
+              "content": "Odwiedź repozytorium na Githubie",
               "url": "https://github.com/kondi171/BlockBall"
             },
             {
               "icon": "link",
-              "content": "Visit website",
+              "content": "Odwiedź witrynę",
               "url": "https://github.com/kondi171/BlockBall"
             }
           ]
@@ -527,28 +516,24 @@
         "name": "Lazy Taste",
         "representation": [
           {
-            "title": "Description",
-            "content": "Game that will allow you to play in a versus mode, as well as against an opponent which will be a computer with different difficulty levels. BlockBall was created in C++ with Allegro 5 library."
+            "title": "Opis",
+            "content": "Aplikacja inżynierska jako system pośredniczący pomiędzy restauracją a klientem, umożliwiający zamawianie posiłków online. System kliencki wspierany jest przez Sztuczną Inteligencję, która za zadanie ma rekomendowanie posiłków gastronomicznych na podstawie zebranych danych z zamówień klienta. System został zaimplementowany w języku JavaScript wraz z biblioteką React.js dla warstwy wizualnej oraz logiki biznesowej. Za przechowywanie oraz segregację danych odpowiada nierelacyjna baza danych - MongoDB. Do obsługi bazy danych wykorzystana została backendowa implementacja JavaScript'u - Node.js."
           },
           {
-            "title": "Game Rules",
-            "content": "Each hit block captured by a player's ball gives him 100 points to his score and increases the ball's speed multiplier, however, if the opponent hits the wrong ball in his square, then 150 points are taken away. Each life is worth 1000 points, if the player loses one life then 1000 points go to the opponent's account, but if the player manages to keep them then 1000 points go to his account during the game summary."
+            "title": "Sztuczna Sieć Neuronowa",
+            "content": "System kliencki został wsparty o implementacje Sztucznej Sieci Neuronowej - Long Short Term Memory (LSTM) czyli długoterminowa pamięć krótkoterminowa. Jest to rekurencyjny typ sieci neuronowej, który w odróżnieniu od standardowych sieci neronowych ma możliwość sprzężenia zwrotnego. Główną zaletą tego typu sieci jest możliwość przetwarzania zarówno pojedynczych danych jak i sekwencji w tym ciągów znaków, które są przekazywane do danych uczących, na podstawie których jest przewidywany wynik."
           },
           {
-            "title": "Control keys",
-            "content": "<ol><li>Menu:<ul><li>Up Arrow - go up</li><li>Down Arrow - go down</li><li>Enter - Accept</li></ul></li><li>First Player:<ul><li>Up Arrow - start ball</li><li>Left Arrow - go left</li><li>Right Arrow - go right</li></ul></li><li>Second Player:<ul><li>S - start ball</li><li>A - go left</li><li>D - go right</li></ul></li><li>Pause:<ul><li>Escape - enter pause</li><li>Space - continue game</li><li>Enter - quit game</li></ul></li><li>Pause:<ul><li>O - load game</li><li>P - save game</li></ul></li></ol>"
+            "title": "Dokumentacja",
+            "content": "Dokumentacja stanowi nieodłączną część pracy inżynierskiej chroniącej przez prawa autorskie. Dokumentacja zostanie udostępniona na indywidualną prośbę. "
           },
           {
-            "title": "Documentation",
-            "content": "The documentation was generated using Doxygen version 1.9.1. It has been written in html format, a separate folder has been separated in the project for the content of the documentation and a separate folder for the source files of the Doxygen program.To run the documentation, you can install the doxygen program and upload the project to it. However, the simplest way is to go to html folder and open index.html like this: <strong>Blockball &gt; html &gt; index.html</strong>"
-          },
-          {
-            "title": "Installation",
-            "content": "The simplest way to run game is to open <i>BlockBall.exe</i> file. You can install that game on your computer. Installer is in installer folder <strong>intaller &gt;  Setup Files &gt;  BlockBall.exe</strong>"
+            "title": "Jak uruchomić?",
+            "content": "Odwiedź witrynę: <a href='https://lazytaste-frontend.onrender.com'> LazyTaste</a></br>API: </br><a href='https://lazytaste-backend.onrender.com/API/opinions'>Baza opinii</a><a href='https://lazytaste-backend.onrender.com/API/customers'>Baza klientów</a><a href='https://lazytaste-backend.onrender.com/API/restaurants'>Baza restauracji</a><a href='https://lazytaste-backend.onrender.com/API/lazy-assistant'>Baza leniwego asystenta</a> <strong>WAŻNE!</strong> Z powodu darmowego pakietu hostującego, prędkość wymiany danych pomiędzy frontendem a backendem jest uboga, zalecana cierpliwość :) "
           }
         ],
         "techStack": {
-          "title": "Tech Stack",
+          "title": "Stos Technologiczny",
           "stack": [
             "HTML",
             "SCSS",
@@ -562,7 +547,7 @@
           ]
         },
         "authors": {
-          "title": "Authors",
+          "title": "Autorzy",
           "authors": [
             {
               "name": "@kondi171",
@@ -571,17 +556,17 @@
           ]
         },
         "links": {
-          "title": "Visit",
+          "title": "Odwiedź",
           "links": [
             {
               "icon": "github",
-              "content": "Visit repository on github",
-              "url": "https://github.com/kondi171/BlockBall"
+              "content": "Odwiedź repozytorium na Githubie",
+              "url": "https://github.com/kondi171/LazyTaste"
             },
             {
               "icon": "link",
-              "content": "Visit website",
-              "url": "https://github.com/kondi171/BlockBall"
+              "content": "Odwiedź witrynę",
+              "url": "https://lazytaste-frontend.onrender.com/"
             }
           ]
         }

@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { useSpring, animated } from "react-spring";
-import { AppContext } from "./flow/AppContext";
 
 import About from "./About";
 import Footer from "./Footer";
@@ -52,8 +51,7 @@ import LazyTaste_03 from './../assets/img/projects/LazyTaste/LazyTaste_03.png';
 
 const Portfolio = () => {
 
-    const { setProjectPageAccessibility } = useContext(AppContext);
-    const [init, setInit] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const skillsImages = [
         {
             title: 'HTML',
@@ -190,23 +188,21 @@ const Portfolio = () => {
     });
 
     useEffect(() => {
-        window.onload = () => {
-            setTimeout(() => {
-                setInit(true);
-            }, 300);
-        };
-        setProjectPageAccessibility(true);
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 600);
     }, []);
     document.addEventListener("touchstart", function () { }, true);
     return (
         <div className="wrapper" >
-            <animated.div style={fadePage}>
-                <Header />
-                <About />
-                <SkillSet skillsImages={skillsImages} />
-                <Projects projectsImages={projectsImages} />
-                <Footer />
-            </animated.div>
+            {isLoading ? <Loading /> :
+                <animated.div style={fadePage}>
+                    <Header />
+                    <About />
+                    <SkillSet skillsImages={skillsImages} />
+                    <Projects projectsImages={projectsImages} />
+                    <Footer />
+                </animated.div>}
         </div>
     );
 }

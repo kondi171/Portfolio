@@ -9,8 +9,9 @@ const AppProvider = ({ children }) => {
   const [skillsData, setSkillsData] = useState({});
   const [projectsData, setProjectsData] = useState({});
   const [footerData, setFooterData] = useState({});
-  const [theme, setTheme] = useState('Lambda');
-  const [projectPageAccessibility, setProjectPageAccessibility] = useState(false);
+  const [theme, setTheme] = useState('Abyss');
+  const [language, setLanguage] = useState(true); // pl - true; eng - false
+  const [isThemeChanged, setIsThemeChanged] = useState(true);
   return (
     <AppContext.Provider
       value={{
@@ -26,8 +27,10 @@ const AppProvider = ({ children }) => {
         setFooterData,
         theme,
         setTheme,
-        projectPageAccessibility,
-        setProjectPageAccessibility
+        language,
+        setLanguage,
+        isThemeChanged,
+        setIsThemeChanged
       }}>
       {children}
     </AppContext.Provider>

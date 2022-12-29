@@ -129,12 +129,21 @@
     .caricature {
         width: 50px;
         height: 50px;
-        transition-duration: .4s;
+        transition-duration: .2s;
         z-index: 10;
+
+        &[data-theme='Abyss'] {
+            filter: invert(81%) sepia(61%) saturate(507%) hue-rotate(13deg) brightness(96%) contrast(113%);
+        }
 
         &:hover {
             cursor: pointer;
+            filter: invert(25%) sepia(34%) saturate(3059%) hue-rotate(163deg) brightness(90%) contrast(98%);
             transform: scale(1.1);
+
+            &[data-theme='Abyss'] {
+                filter: invert(27%) sepia(19%) saturate(3414%) hue-rotate(136deg) brightness(93%) contrast(102%);
+            }
         }
     }
 
