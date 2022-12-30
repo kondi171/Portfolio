@@ -152,17 +152,17 @@ const Settings = () => {
         const caricature = document.querySelector('.caricature');
         caricature.dataset.theme = theme;
 
+        const menuHeaderMobile = document.querySelector('.menu h2');
+        menuHeaderMobile.dataset.theme = theme;
+        const times = document.querySelectorAll('.fa-times');
+        times.forEach(times => times.dataset.theme = theme);
+        const bars = document.querySelectorAll('.fa-bars');
+        bars.forEach(bars => bars.dataset.theme = theme);
     }
     const handleChangeTheme = () => {
         const newTheme = theme === 'Abyss' ? 'Lambda' : 'Abyss';
         setTheme(newTheme);
         readyTheme(newTheme);
-
-        // skills[0].dataset.theme = theme;
-        // const times = document.querySelector('.fa.fa-times');
-        // const bars = document.querySelector('.fa.fa-bars');
-        // times.dataset.theme = theme;
-        // bars.dataset.theme = theme;
     }
 
     window.addEventListener('scroll', () => {

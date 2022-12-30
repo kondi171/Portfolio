@@ -4,6 +4,18 @@
     background-blend-mode: color-dodge;
     background-color: $blackColor;
 
+    &[data-theme='Lambda'] {
+        transition-duration: .4s;
+        background-blend-mode: color-dodge;
+        background-color: $blackColor;
+    }
+
+    &[data-theme='Abyss'] {
+        transition-duration: .4s;
+        background-blend-mode: color-dodge;
+        background-color: transparent;
+    }
+
     .projects-section-control {
         position: fixed;
         top: 0;
@@ -19,33 +31,38 @@
         opacity: .8;
         @include tooltip ($primaryColor, $darkColor, "bottom");
 
-        .caricature {
-            width: 7vmin;
-            height: 7vmin;
-            transition-duration: .2s;
-            z-index: 10;
+        &[data-theme='Abyss'] {
+            background-color: $blackColorAbyss;
+            @include tooltip($primaryColorAbyss, $darkColorAbyss, "bottom");
+        }
 
-            &[data-theme='Abyss'] {
-                filter: invert(81%) sepia(61%) saturate(507%) hue-rotate(13deg) brightness(96%) contrast(113%);
-            }
+        .caricature {
+            width: 50px;
+            height: 50px;
+            transition-duration: .4s;
+            z-index: 10;
 
             &:hover {
                 cursor: pointer;
-                filter: invert(25%) sepia(34%) saturate(3059%) hue-rotate(163deg) brightness(90%) contrast(98%);
-
-                &[data-theme='Abyss'] {
-                    filter: invert(27%) sepia(19%) saturate(3414%) hue-rotate(136deg) brightness(93%) contrast(102%);
-                }
+                transform: scale(1.2);
             }
         }
 
         i {
             font-size: 7vmin;
             color: $primaryColor;
-            transition-duration: .2s;
+            transition-duration: .4s;
+
+            &[data-theme='Abyss'] {
+                color: $primaryColorAbyss;
+            }
 
             &:hover {
                 color: $secondaryColor;
+
+                &[data-theme='Abyss'] {
+                    color: $secondaryColorAbyss;
+                }
             }
         }
     }
@@ -58,6 +75,10 @@
         color: $primaryColor;
         text-shadow: 2px 2px 0 $blackColor,
             -2px 2px 0 $blackColor;
+
+        &[data-theme='Abyss'] {
+            color: $primaryColorAbyss;
+        }
     }
 
     .image-stack {
@@ -87,6 +108,10 @@
             color: darken($secondaryColor, 10%);
             text-align: center;
             margin: 4vmin 0;
+
+            &[data-theme='Abyss'] {
+                color: darken($secondaryColorAbyss, 10%);
+            }
         }
 
         &__items {
@@ -114,6 +139,10 @@
                     text-align: center;
                     margin-top: 2vmin;
                     color: $darkColor;
+
+                    &[data-theme='Abyss'] {
+                        color: $darkColorAbyss;
+                    }
                 }
 
                 img {
@@ -123,7 +152,11 @@
                     padding: 10%;
                     aspect-ratio: 3/3;
                     object-fit: contain;
+
                     // mix-blend-mode: color-burn;
+                    &[data-theme='Abyss'] {
+                        background-color: $darkColorAbyss;
+                    }
                 }
             }
         }
@@ -145,8 +178,18 @@
             line-height: 150%;
             margin-bottom: 2vmin;
 
+            &[data-theme='Abyss'] {
+                color: $primaryColorAbyss;
+                text-shadow: 2px 2px 2px $blackColorAbyss,
+                    -2px 2px 1px $bgColorAbyss;
+            }
+
             &:hover {
                 color: $secondaryColor;
+
+                &[data-theme='Abyss'] {
+                    color: $secondaryColorAbyss;
+                }
             }
         }
 
@@ -163,6 +206,10 @@
                 color: darken($secondaryColor, 10%);
                 text-align: center;
                 margin: 4vmin 0;
+
+                &[data-theme='Abyss'] {
+                    color: darken($secondaryColorAbyss, 10%);
+                }
             }
 
             p {
@@ -197,6 +244,10 @@
 
             strong {
                 color: $secondaryColor;
+
+                &[data-theme='Abyss'] {
+                    color: $secondaryColorAbyss;
+                }
             }
         }
     }
@@ -208,6 +259,10 @@
             color: darken($secondaryColor, 10%);
             text-align: center;
             margin: 4vh 0;
+
+            &[data-theme='Abyss'] {
+                color: darken($secondaryColorAbyss, 10%);
+            }
         }
 
         ul {
@@ -222,10 +277,19 @@
                     color: $primaryColor;
                     text-decoration: none;
                     transition-duration: .4s;
-                    text-shadow: 2px 2px 2px $blackColor;
+
+
+                    &[data-theme='Abyss'] {
+                        color: $primaryColorAbyss;
+                        text-shadow: 2px 2px 2px $darkColorAbyss;
+                    }
 
                     &:hover {
                         color: $secondaryColor;
+
+                        &[data-theme='Abyss'] {
+                            color: $secondaryColorAbyss;
+                        }
                     }
                 }
 
@@ -244,6 +308,10 @@
             color: darken($secondaryColor, 10%);
             margin: 4vh 0;
             text-align: center;
+
+            &[data-theme='Abyss'] {
+                color: darken($secondaryColorAbyss, 10%);
+            }
         }
 
         .link {
@@ -264,6 +332,10 @@
                 text-shadow: 2px 2px 2px $blackColor;
                 transition-duration: .4s;
 
+                &[data-theme='Abyss'] {
+                    color: $primaryColorAbyss;
+                }
+
                 i {
                     text-align: center;
                     font-size: 8vmin;
@@ -272,6 +344,10 @@
 
                 &:hover {
                     color: $secondaryColor;
+
+                    &[data-theme='Abyss'] {
+                        color: $secondaryColorAbyss;
+                    }
                 }
             }
         }

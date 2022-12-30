@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-const Progress = () => {
+const Progress = ({ pageHeight, setPageHeight, currentScroll, setCurrentScroll }) => {
 
-  const [pageHeight, setPageHeight] = useState(0);
-  const [currentScroll, setCurrentScroll] = useState(0);
 
   const countProgressMax = () => {
     const body = document.body;
     const html = document.documentElement;
     const height = Math.max(body.getBoundingClientRect().height, html.getBoundingClientRect().height);
-    setPageHeight(height);
+    setPageHeight(height - window.innerHeight);
   }
 
   const settingsVisibility = () => {
     const settings = document.getElementById('settings');
     settings.classList.remove('visible');
     setCurrentScroll(window.scrollY);
+    countProgressMax();
   }
 
   useEffect(() => {

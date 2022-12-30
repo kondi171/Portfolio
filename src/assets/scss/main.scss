@@ -9,6 +9,7 @@
 @import 'footer.scss';
 @import 'modal.scss';
 @import 'single-project.scss';
+@import 'loading.scss';
 
 :root {
     font-size: 10px;
@@ -26,34 +27,24 @@
 }
 
 ::selection {
-    background-color: $primaryColor;
-    color: $darkColor;
-
-    &[data-theme='Night-Owl'] {
-        background-color: $primaryColorAbyss;
-        color: $darkColorAbyss;
-    }
+    background-color: $secondaryColorAbyss;
+    color: $bgColor;
 }
 
 body::-webkit-scrollbar {
     width: 15px;
-    background-color: $darkColor;
-
-    &[data-theme='Night-Owl'] {
-        background-color: $primaryColorAbyss;
-        color: $darkColorAbyss;
-    }
+    background-color: $blackColor;
 
     &-thumb {
-        background: $primaryColor;
+        background: lighten($blackColorAbyss, 15%);
         transition-duration: .4s;
         border-radius: 100vw;
-        border: 3px solid $darkColor;
+        border: 3px solid $blackColor;
         transition-duration: .4s;
 
         &:hover {
             cursor: pointer;
-            background: $secondaryColor;
+            background: $supportColor;
         }
     }
 }

@@ -326,6 +326,12 @@
           height: 90vh;
           margin-top: 0;
           z-index: 0;
+
+          &::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+          }
         }
 
         .fa {
@@ -340,13 +346,11 @@
         }
 
         .fa-angle-double-left {
-          left: 45%;
-          top: 2%;
-          transform: rotate(90deg);
+          display: none;
         }
 
         .fa-angle-double-right {
-          right: 0;
+          display: none;
         }
 
         .project-miniature {
@@ -357,11 +361,11 @@
           margin: 0 2.5%;
 
           &:first-of-type {
-            margin-top: 40vmax;
+            margin-top: 60vmax;
           }
 
           &:last-of-type {
-            margin-bottom: 10vmax;
+            margin-bottom: 20vmax;
           }
 
           h4 {

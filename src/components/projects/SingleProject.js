@@ -1,13 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { AppContext } from './../flow/AppContext';
-import caricature from './../../assets/img/avatar/caricature.png'
+import caricatureLambda from './../../assets/img/avatar/caricature-lambda.png'
+import caricatureAbyss from './../../assets/img/avatar/caricature-abyss.png'
 import Footer from './../Footer';
 import Loading from "../features/loading/Loading";
 
 
 const SingleProject = () => {
-    const { projectsData, setProjectsData, language } = useContext(AppContext);
+    const { projectsData, setProjectsData, language, theme } = useContext(AppContext);
     const location = useLocation();
     const navigate = useNavigate();
     const [projectID, setProjectID] = useState('BlockBall');
@@ -60,8 +61,61 @@ const SingleProject = () => {
         checkPageWidth();
         window.addEventListener('resize', checkPageWidth);
         loadPage();
-    }, []);
 
+    }, []);
+    useEffect(() => {
+        if (!isLoading) {
+            const singleProjectBackground = document.querySelector('.project');
+            singleProjectBackground.dataset.theme = theme;
+            const projectHeader = document.querySelector('.project h2');
+            projectHeader.dataset.theme = theme;
+            const techStackHeader = document.querySelector('.tech-stack__header');
+            techStackHeader.dataset.theme = theme;
+            const techStackItemsImages = document.querySelectorAll('.tech-stack__item img');
+            techStackItemsImages.forEach(item => item.dataset.theme = theme);
+            const techStackItemsHeaders = document.querySelectorAll('.tech-stack__item h4');
+            techStackItemsHeaders.forEach(item => item.dataset.theme = theme);
+            const contentItems = document.querySelectorAll('.content__item h3');
+            contentItems.forEach(item => item.dataset.theme = theme);
+            const authorsHeader = document.querySelector('.authors__header');
+            authorsHeader.dataset.theme = theme;
+            const authors = document.querySelectorAll('.authors li a');
+            authors.forEach(author => author.dataset.theme = theme);
+            const linksHeader = document.querySelector('.links__header');
+            linksHeader.dataset.theme = theme;
+            const links = document.querySelectorAll('.links .link a');
+            links.forEach(link => link.dataset.theme = theme);
+            const strongs = document.querySelectorAll('strong');
+            strongs.forEach(strong => strong.dataset.theme = theme);
+            const hyperlinks = document.querySelectorAll('.content a');
+            hyperlinks.forEach(hyperlink => hyperlink.dataset.theme = theme);
+
+            const projectsSectionController = document.querySelector('.projects-section-control');
+            const arrows = document.querySelectorAll('.projects-section-control i');
+            arrows.forEach(arrow => arrow.dataset.theme = theme);
+            projectsSectionController.dataset.theme = theme;
+            const footerSourceAuthors = document.querySelectorAll('.footer__sources a');
+            const footerHeaders = document.querySelectorAll('.footer__content h4');
+            const footerImage = document.querySelector('.footer__author .img-wrapper');
+            const footerSocialsTooltip = document.querySelector('.footer__author .socials');
+            const footerSocials = document.querySelectorAll('.footer__author a');
+
+            footerImage.dataset.theme = theme;
+            footerSocials.forEach(social => social.dataset.theme = theme);
+            footerSocialsTooltip.dataset.theme = theme;
+
+            if (footerSourceAuthors.length !== 0) {
+                footerSourceAuthors.forEach(author => author.dataset.theme = theme);
+                footerHeaders.forEach(header => header.dataset.theme = theme);
+            }
+            const footerIcons = document.querySelectorAll('.contact span');
+            if (footerIcons.length !== 0) {
+                footerIcons.forEach(icon => icon.dataset.theme = theme);
+            }
+            const footer = document.getElementById('footer');
+            footer.dataset.theme = theme;
+        }
+    }, [isLoading]);
     useEffect(() => {
         const url = window.location.href;
         const splitURL = url.split('/');
@@ -93,7 +147,7 @@ const SingleProject = () => {
                             <span className="tooltip__text">{Object.keys(projectsData).length !== 0 && projectsData?.projectSectionController[0]}</span>
                         </div>
                         <div className="tooltip" target="_blank" rel="noreferrer">
-                            <img id="caricature" className="caricature tooltip__icon" onClick={navigateToLandingPage} src={caricature} alt="Author caricature" />
+                            <img id="caricature" className="caricature tooltip__icon" onClick={navigateToLandingPage} src={theme === 'Lambda' ? caricatureLambda : caricatureAbyss} alt="Author caricature" />
                             <span className="tooltip__text">{Object.keys(projectsData).length !== 0 && projectsData?.projectSectionController[1]}</span>
                         </div>
                         <div className="tooltip" target="_blank" rel="noreferrer">

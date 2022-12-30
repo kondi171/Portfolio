@@ -1,14 +1,47 @@
-import { useEffect, useState, useContext, useRef } from "react";
+import { useEffect, useContext } from "react";
 import { Link as ScrollLink } from 'react-scroll';
 import { AppContext } from "../flow/AppContext";
 
-const Menu = () => {
+const Menu = ({ menuExpanded, setMenuExpanded, currentScroll, setCurrentScroll, pageHeight, setPageHeight }) => {
 
     const { navData } = useContext(AppContext);
 
-    const [menuExpanded, setMenuExpanded] = useState(false);
-    const [pageHeight, setPageHeight] = useState(0);
-    const [currentScroll, setCurrentScroll] = useState(0);
+    const checkPageHeight = () => {
+        const body = document.body;
+        const html = document.documentElement;
+        const height = Math.max(body.getBoundingClientRect().height, html.getBoundingClientRect().height);
+        setPageHeight(Number((height - window.innerHeight).toFixed(0)));
+    }
+
+    useEffect(() => {
+        const projects = document.getElementById('projectsScrollLink');
+        const contact = document.getElementById('contactScrollLink');
+        const skills = document.getElementById('skillsScrollLink');
+        const footerSection = document.getElementById('footer').getBoundingClientRect().height;
+        if (navData?.menu) {
+            if (currentScroll >= pageHeight) {
+                projects.classList.remove('active');
+                contact.classList.add('active');
+            } else if (currentScroll >= (pageHeight - footerSection)) {
+                projects.classList.add('active');
+                contact.classList.remove('active');
+            } else projects.classList.remove('active');
+            if (skills.classList.contains('active')) projects.classList.remove('active');
+            if (contact.classList.contains('active')) projects.classList.remove('active');
+            if (currentScroll <= 500) contact.classList.remove('active');
+        }
+    }, [currentScroll, pageHeight, navData]);
+
+    useEffect(() => {
+        checkPageHeight();
+        window.addEventListener('resize', checkPageHeight);
+        window.addEventListener('scroll', scrollUpdate);
+    }, []);
+
+    const scrollUpdate = () => {
+        setCurrentScroll(window.scrollY);
+        checkPageHeight();
+    }
 
     const handleExpandMenu = expanded => {
         const menu = document.querySelector('.menu');
@@ -21,24 +54,6 @@ const Menu = () => {
         setMenuExpanded(expanded);
     }
 
-    const handleMenuVisibility = () => {
-        const projects = document.getElementById('projectsScrollLink');
-        const contact = document.getElementById('contactScrollLink');
-        if (navData?.menu) {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                projects.classList.remove('active');
-                contact.classList.add('active');
-            } else if ((window.innerHeight + window.scrollY) <= document.body.offsetHeight && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-                projects.classList.add('active');
-                contact.classList.remove('active');
-            }
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleMenuVisibility);
-    }, []);
-
     useEffect(() => {
         const menu = document.querySelector('.menu');
         if (menuExpanded) menu.style.transform = 'scale(1)';
@@ -47,7 +62,8 @@ const Menu = () => {
 
     useEffect(() => {
         return () => {
-            window.removeEventListener('scroll', handleMenuVisibility);
+            window.removeEventListener('scroll', scrollUpdate);
+            window.addEventListener('resize', checkPageHeight);
         }
     }, []);
 
@@ -57,13 +73,18 @@ const Menu = () => {
                 <i onClick={() => handleExpandMenu(false)} className="fa fa-times" aria-hidden="true"></i> :
                 <i onClick={() => handleExpandMenu(true)} className="fa fa-bars" aria-hidden="true"></i>
             }
+            <div className="pseudo-handlers">
+                <i className="fa fa-times" aria-hidden="true"></i>
+                <i className="fa fa-bars" aria-hidden="true"></i>
+            </div>
+
             <div className="menu">
                 <h2>Menu</h2>
                 {navData?.menu && <>
-                    <ScrollLink data-theme="dar" id="aboutScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="about" smooth={true} duration={400} offset={-130}>{navData.menu.about}</ScrollLink>
+                    <ScrollLink id="aboutScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="about" smooth={true} duration={400} offset={-130}>{navData.menu.about}</ScrollLink>
                     <ScrollLink id="skillsScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="skillSet" smooth={true} duration={400} offset={-130}>{navData.menu.skills}</ScrollLink>
                     <ScrollLink id="projectsScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="projects" smooth={true} duration={400} offset={-130}>{navData.menu.projects}</ScrollLink>
-                    <ScrollLink id="contactScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="footer" smooth={true} duration={400} offset={-130}>{navData.menu.contact}</ScrollLink>
+                    <ScrollLink id="contactScrollLink" onClick={() => setMenuExpanded(false)} isDynamic={true} spy={true} activeClass="active" className="option" to="footer" smooth={true} duration={400} >{navData.menu.contact}</ScrollLink>
                 </>}
             </div>
         </>

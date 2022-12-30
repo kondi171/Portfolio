@@ -1,5 +1,3 @@
-@import './../../../assets/scss/variables';
-
 .loading {
   position: fixed;
   display: flex;
@@ -15,15 +13,15 @@
 
   &__spinner--one {
     position: absolute;
-    top: 30vh;
-    left: 45vw;
-    right: 45vw;
-    width: 10vw;
-    height: 10vw;
+    top: calc(50vh - 10vmax);
+    left: 0;
+    right: 0;
+    width: 10vmax;
+    height: 10vmax;
     border-radius: 50%;
     border-top: 3px solid $primaryColor;
     border-left: 3px solid $primaryColor;
-    margin: 24px auto;
+    margin: 0 auto;
     box-shadow: 0 0 4px 4px $primaryColor;
 
     &[data-theme='Abyss'] {
@@ -35,15 +33,15 @@
 
   &__spinner--two {
     position: absolute;
-    top: 32.5vh;
-    left: 45vw;
-    right: 45vw;
-    width: 7.5vw;
-    height: 7.5vw;
+    top: calc(50vh - 10vmax);
+    left: 0;
+    right: 0;
+    width: 10vmax;
+    height: 10vmax;
     border-radius: 50%;
     border-bottom: 2px solid $primaryColor;
     border-right: 2px solid $primaryColor;
-    margin: 24px auto;
+    margin: 0 auto;
 
     &[data-theme='Abyss'] {
       border-bottom-color: $primaryColorAbyss;
@@ -53,15 +51,15 @@
 
   &__spinner--three {
     position: absolute;
-    top: 35vh;
-    left: 45vw;
-    right: 45vw;
-    width: 5vw;
-    height: 5vw;
+    top: calc(50vh - 7.5vmax);
+    left: 0;
+    right: 0;
+    width: 5vmax;
+    height: 5vmax;
     border-radius: 50%;
     border-top: 1px solid $primaryColor;
     border-right: 1px solid $primaryColor;
-    margin: 24px auto;
+    margin: auto;
 
     &[data-theme='Abyss'] {
       border-top-color: $primaryColorAbyss;
@@ -72,7 +70,9 @@
   &__text {
     position: absolute;
     top: 55vh;
-    width: 50vw;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     display: block;
     color: $primaryColor;
     font-size: 42px;

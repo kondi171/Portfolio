@@ -1,4 +1,3 @@
-import './_loading.scss';
 import { useEffect, useState, useContext } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { AppContext } from '../../flow/AppContext';
@@ -39,8 +38,6 @@ const Loading = () => {
 
     },
     rotate: 360,
-
-    // delay: 100,
   });
 
   const [dots, setDots] = useState('');
