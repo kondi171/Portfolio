@@ -225,6 +225,56 @@
         }
       },
       {
+        "id": "WebReview",
+        "name": "Web Review",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Single Page Application created with React.js for frontend and PHP + MySQL for backend. Application in current version has a several movies which we can review."
+          },
+          {
+            "title": "How to run?",
+            "content": "Application in not full Web Service. To Open frontend visit deploy: Visit deployment: <a href='https://web-review.netlify.app'>web-review.netlify.app</a> To handle backend:<li>Download localhost server hosting like <strong>XAMPP</strong> and run <strong>Apache server </strong>and <strong>MySQL</strong></li><li>Create in <strong>phpMyAdmin</strong> database <i>webreview</i>, next import to this database <i>webreview.sql</i> file which is in <strong>db</strong> folder. File contains structure of tables and several examples of reviews. </li><li>Enjoy full app content! </li>"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js",
+            "PHP",
+            "MySQL",
+            "Bootstrap"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171 - Konrad Nowak",
+              "link": "https://github.com/kondi171"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/WebReview"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://web-review.netlify.app"
+            }
+          ]
+        }
+      },
+      {
         "id": "LazyTaste",
         "name": "Lazy Taste",
         "representation": [
@@ -280,6 +330,53 @@
               "icon": "link",
               "content": "Visit website",
               "url": "https://lazytaste-frontend.onrender.com"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Portfolio",
+        "name": "Portfolio",
+        "representation": [
+          {
+            "title": "Description",
+            "content": "Single Page Application implemented with React.js. Application describe me and represents my skills and projects."
+          },
+          {
+            "title": "How to run?",
+            "content": "You already here :)"
+          }
+        ],
+        "techStack": {
+          "title": "Tech Stack",
+          "stack": [
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js"
+          ]
+        },
+        "authors": {
+          "title": "Authors",
+          "authors": [
+            {
+              "name": "@kondi171 - Konrad Nowak",
+              "link": "https://github.com/kondi171"
+            }
+          ]
+        },
+        "links": {
+          "title": "Visit",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Visit repository on github",
+              "url": "https://github.com/kondi171/Portfolio"
+            },
+            {
+              "icon": "link",
+              "content": "Visit website",
+              "url": "https://konrad-nowak.netlify.app"
             }
           ]
         }
@@ -512,6 +609,56 @@
         }
       },
       {
+        "id": "WebReview",
+        "name": "Web Review",
+        "representation": [
+          {
+            "title": "Opis",
+            "content": "Aplikacja typu SPA zaprojektowana za pomocą React.js po stronie frontendu oraz PHP + MySQL po stronie backendu i obsługi bazy danych. Aplikacja w aktualnej wersji posiada kilka filmów, które możemy ocenić."
+          },
+          {
+            "title": "Jak uruchomić?",
+            "content": "Aplikacja nie jest pełnym Web Serwisem. Aby otworzyć frontend odwiedź witrynę: <a href='https:// https://web-review.netlify.app'> webreview.netlify.app</a> <br/>Aby witryna obsłużyła również backend należy: <li>Zainstalować hostujący serwer lokalny np. <strong>XAMPP</strong> i uruchomić w nim <strong>Apache server</strong> oraz <strong>MySQL</strong></li><li>Stworzyć w <strong>phpMyAdmin</strong> bazę danych o nazwie <i>webreview</i>, następnie zaimportować bazę danych z pliku <i>webreview.sql</i>, który znajduje się w folderze <strong>db</strong>. Plik ten zawiera struktury tabel oraz kilka przykładow recenzji. </li><li>Ciesz się pełną zawartością aplikacji! </li>"
+          }
+        ],
+        "techStack": {
+          "title": "Stos Technologiczny",
+          "stack": [
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js",
+            "PHP",
+            "MySQL",
+            "Bootstrap"
+          ]
+        },
+        "authors": {
+          "title": "Autorzy",
+          "authors": [
+            {
+              "name": "@kondi171 - Konrad Nowak",
+              "link": "https://github.com/kondi171"
+            }
+          ]
+        },
+        "links": {
+          "title": "Odwiedź",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Odwiedź repozytorium na Githubie",
+              "url": "https://github.com/kondi171/WebReview"
+            },
+            {
+              "icon": "link",
+              "content": "Odwiedź witrynę",
+              "url": "https://web-review.netlify.app"
+            }
+          ]
+        }
+      },
+      {
         "id": "LazyTaste",
         "name": "Lazy Taste",
         "representation": [
@@ -567,6 +714,53 @@
               "icon": "link",
               "content": "Odwiedź witrynę",
               "url": "https://lazytaste-frontend.onrender.com/"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Portfolio",
+        "name": "Portfolio",
+        "representation": [
+          {
+            "title": "Opis",
+            "content": "Aplikacja typu SPA zaimplementowana za pomocą React.js. Aplikacja opisuje mnie oraz reprezentuje moje umiejętności oraz projekty."
+          },
+          {
+            "title": "Jak uruchomić?",
+            "content": "Właśnie tutaj jesteś :)"
+          }
+        ],
+        "techStack": {
+          "title": "Stos Technologiczny",
+          "stack": [
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "React.js"
+          ]
+        },
+        "authors": {
+          "title": "Autorzy",
+          "authors": [
+            {
+              "name": "@kondi171 - Konrad Nowak",
+              "link": "https://github.com/kondi171"
+            }
+          ]
+        },
+        "links": {
+          "title": "Odwiedź",
+          "links": [
+            {
+              "icon": "github",
+              "content": "Odwiedź repozytorium na Githubie",
+              "url": "https://github.com/kondi171/Portfolio"
+            },
+            {
+              "icon": "link",
+              "content": "Odwiedź witrynę",
+              "url": "https://konrad-nowak.netlify.app"
             }
           ]
         }

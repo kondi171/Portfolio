@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 
 import About from "./About";
@@ -45,9 +45,17 @@ import CzasNaMasaz_01 from './../assets/img/projects/CzasNaMasaz/CzasNaMasaz_01.
 import CzasNaMasaz_02 from './../assets/img/projects/CzasNaMasaz/CzasNaMasaz_02.png';
 import CzasNaMasaz_03 from './../assets/img/projects/CzasNaMasaz/CzasNaMasaz_03.png';
 
+import WebReview_01 from './../assets/img/projects/WebReview/WebReview_01.png';
+import WebReview_02 from './../assets/img/projects/WebReview/WebReview_02.png';
+import WebReview_03 from './../assets/img/projects/WebReview/WebReview_03.png';
+
 import LazyTaste_01 from './../assets/img/projects/LazyTaste/LazyTaste_01.png';
 import LazyTaste_02 from './../assets/img/projects/LazyTaste/LazyTaste_02.png';
 import LazyTaste_03 from './../assets/img/projects/LazyTaste/LazyTaste_03.png';
+
+import Portfolio_01 from './../assets/img/projects/Portfolio/Portfolio_01.png';
+import Portfolio_02 from './../assets/img/projects/Portfolio/Portfolio_02.png';
+import Portfolio_03 from './../assets/img/projects/Portfolio/Portfolio_03.png';
 
 const Portfolio = () => {
 
@@ -162,6 +170,23 @@ const Portfolio = () => {
             ]
         },
         {
+            id: 'WebReview',
+            img: [
+                WebReview_01,
+                WebReview_02,
+                WebReview_03
+            ],
+            stack: [
+                HTML,
+                SASS,
+                JS,
+                REACT,
+                PHP,
+                MySQL,
+                Bootstrap
+            ]
+        },
+        {
             id: 'LazyTaste',
             img: [
                 LazyTaste_01,
@@ -178,6 +203,20 @@ const Portfolio = () => {
                 MongoDB,
                 Mongoose,
                 Brain
+            ]
+        },
+        {
+            id: 'Portfolio',
+            img: [
+                Portfolio_01,
+                Portfolio_02,
+                Portfolio_03
+            ],
+            stack: [
+                HTML,
+                SASS,
+                JS,
+                REACT
             ]
         }
     ];

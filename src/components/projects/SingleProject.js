@@ -11,7 +11,7 @@ const SingleProject = () => {
     const { projectsData, setProjectsData, language, theme } = useContext(AppContext);
     const location = useLocation();
     const navigate = useNavigate();
-    const [projectID, setProjectID] = useState('BlockBall');
+    const [projectID, setProjectID] = useState('LazyTaste');
     const [project, setProject] = useState({});
     const [projectImages, setProjectImages] = useState({});
     const [desktopLayout, setDesktopLayout] = useState(false);
@@ -166,7 +166,7 @@ const SingleProject = () => {
                                 <div className="authors">
                                     <h3 className="authors__header">{project?.authors?.title}</h3>
                                     <ul>
-                                        {project?.authors?.authors?.map(author => <li key={author.name}><a href={author.link}>{author.name}</a></li>)}
+                                        {project?.authors?.authors?.map(author => <li key={author.name}><a href={author.link} rel="noreferrer" target='_blank'>{author.name}</a></li>)}
                                     </ul>
                                 </div>
                                 <div className="links">

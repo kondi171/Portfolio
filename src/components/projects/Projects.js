@@ -78,8 +78,8 @@ const Projects = ({ projectsImages }) => {
             setActiveProject({
                 id: "LazyTaste",
                 name: "Lazy Taste",
-                content: projectsData.projects[4].representation[0].content,
-                images: [...projectsImages[4].img]
+                content: projectsData.projects[5].representation[0].content,
+                images: [...projectsImages[5].img]
             });
         }
     }, [projectsData]);
@@ -140,7 +140,7 @@ const Projects = ({ projectsImages }) => {
                     <div className="carussel__content">
                         {projectsData?.projects?.map((miniature, index) => {
                             const { id, name, representation } = miniature;
-                            if (index === 4) return <div key={id} data-id={id} data-name={name} data-content={representation[0].content} onClick={e => handleActiveMiniature(e)} className="project-miniature active">
+                            if (index === 5) return <div key={id} data-id={id} data-name={name} data-content={representation[0].content} onClick={e => handleActiveMiniature(e)} className="project-miniature active">
                                 <img src={projectsImages[index].img[0]} alt={`Miniature of ${name} project`} />
                                 <h4>{name}</h4>
                             </div>

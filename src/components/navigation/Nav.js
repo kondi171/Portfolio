@@ -25,17 +25,17 @@ const Nav = () => {
         const caricature = document.getElementById('caricature');
         const progress = document.querySelector('.progress-bar');
         window.addEventListener('scroll', () => {
-            if (menuExpanded) {
-                if (window.scrollY + 150 > header.offsetHeight) {
-                    nav.classList.add('rolled');
-                    caricature.classList.add('display');
-                    progress.classList.add('display');
-                } else {
-                    nav.classList.remove('rolled');
-                    caricature.classList.remove('display');
-                    progress.classList.remove('display');
-                }
+            // if (menuExpanded) {
+            if (window.scrollY + 150 > header.offsetHeight) {
+                nav.classList.add('rolled');
+                caricature.classList.add('display');
+                progress.classList.add('display');
+            } else {
+                nav.classList.remove('rolled');
+                caricature.classList.remove('display');
+                progress.classList.remove('display');
             }
+            // }
         });
         // if (menuExpanded) {
         //     nav.classList.remove('rolled');
